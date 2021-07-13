@@ -1,3 +1,5 @@
 # Project X (place holder name)
 
-## Web Development Project for the prestigious Jyväskylä University of Applied Sciences
+### This is the Conclusive Project for the Web Development Course at the prestigious [Jyväskylä University of Applied Sciences][1].
+
+[1]: https://www.jamk.fi/
