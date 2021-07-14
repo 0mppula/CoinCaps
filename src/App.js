@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
-import CryptoList from './components/CryptoList';
+import CryptoTable from './components/CryptoTable';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
@@ -25,7 +25,7 @@ function App() {
 	return (
 		<div>
 			<SearchBar cryptos={cryptos} setFileredCryptos={setFileredCryptos} />
-			<CryptoList filteredCryptos={filteredCryptos} />
+			<CryptoTable filteredCryptos={filteredCryptos} />
 		</div>
 	);
 }
