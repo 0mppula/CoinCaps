@@ -7,19 +7,23 @@ const Nav = () => {
 	return (
 		<nav className="navbar">
 			<div className="info">
-				<img
-					src="https://www.brahenvoimistelijat.fi/wp_public/wp-content/uploads/2018/01/logo.png"
-					alt="logo.jpg"
-					width="40px"
-				/>
-				<h1>site name</h1>
+				<a href="">
+					<img
+						src="https://www.brahenvoimistelijat.fi/wp_public/wp-content/uploads/2018/01/logo.png"
+						alt="logo.jpg"
+						width="40px"
+					/>
+					<h1>site name</h1>
+				</a>
 			</div>
 			<div className="controls">
-				<FontAwesomeIcon icon={faMoon} />
+				<div className="icon-wrapper">
+					<FontAwesomeIcon className="icon moon m-6" icon={faMoon} />
+				</div>
 				<div className="currency-toggler">
-					<FontAwesomeIcon icon={faDollarSign} />
+					<FontAwesomeIcon className="icon usd" icon={faDollarSign} />
 					<p className="currency">USD</p>
-					<FontAwesomeIcon icon={faSortDown} />
+					<FontAwesomeIcon className="icon sort" icon={faSortDown} />
 				</div>
 			</div>
 		</nav>

@@ -1,3 +1,87 @@
 .navbar {
-	background-color: var(--clr-primary);
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--clr-primary);
+	color: var(--clr-black);
+	font-family: var(--font-main);
+}
+
+.info {
+	align-items: center;
+	width: min(40%, 200px);
+	display: flex;
+	margin-left: 1rem;
+}
+
+.info a {
+	display: flex;
+	width: 100%;
+	text-decoration: none;
+}
+
+.info img {
+	height: 45px;
+	cursor: pointer;
+}
+
+.info h1 {
+	text-transform: capitalize;
+	margin-top: 0.45rem;
+	margin-left: 0.35rem;
+	user-select: none;
+	color: var(--clr-black);
+}
+
+.controls {
+	margin-right: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.controls > div {
+	border-radius: 4px;
+}
+
+.icon {
+	font-size: 1.1rem;
+}
+
+.currency-toggler {
+	padding: 0.35rem 0.5rem;
+	display: flex;
+	margin-left: 0.5rem;
+	cursor: pointer;
+}
+
+.currency-toggler .usd {
+	margin-top: 0.15rem;
+}
+
+.currency-toggler:hover {
+	background: #66666690;
+}
+
+.icon-wrapper {
+	padding: 0.35rem 0.5rem;
+	cursor: pointer;
+}
+
+.icon-wrapper:hover {
+	background: #44444490;
+}
+
+.icon {
+	color: var(--clr-black);
+	user-select: none;
+	cursor: pointer;
+}
+
+.currency {
+	margin: 0 0.35rem;
 }
