@@ -1,0 +1,4 @@
+- Create Ajax request button that logs cryptocurrency data to console. ✔
+- Store cryptocurrencies in state as an array with init app. ✔
+- Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
+- Style Individual cryptos on list
