@@ -2,20 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-	--clr-primary: #f4ebdc;
+	--clr-background-primary: #fafafb;
+	--clr-text-primary: #1b1b1b;
+	--clr-primary: #553285;
 	--clr-secondary: #1b5584;
 	--clr-secondary-hover: #206195;
+	--clr-danger: #e51b22;
 	--clr-black: #1b1b1b;
-	--clr-white: #f8f8f8;
-	--box-shadow: 0px 0px 13px 0px rgb(27 27 27 / 35%);
+	--clr-white: #fafafb;
+	--box-shadow: 0px 0px 10px 0px rgb(27 27 27 / 35%);
 	--font-main: 'Poppins', sans-serif;
+	--nav-heigth: 3rem;
+	--clr-black-opacity-high: rgba(27, 27, 27, 0.66);
+	--clr-black-opacity-low: rgba(27, 27, 27, 0.15);
+	--clr-primary-opacity-high: rgba(85, 50, 133, 0.66);
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: var(--font-main);
 }
 
-.root {
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - var(--nav-heigth));
+	width: min(1400px, 90vw);
+	margin: 0 auto;
+	margin-top: var(--nav-heigth);
+	align-items: center;
 }

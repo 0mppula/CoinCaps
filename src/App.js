@@ -24,7 +24,7 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className="container">
 			<Nav />
 			<SearchBar cryptos={cryptos} setFileredCryptos={setFileredCryptos} />
 			<CryptoTable filteredCryptos={filteredCryptos} />

@@ -2,13 +2,13 @@
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	height: 3rem;
+	height: var(--nav-heigth);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: var(--clr-primary);
+	background: var(--clr-white);
 	color: var(--clr-black);
-	font-family: var(--font-main);
+	box-shadow: var(--box-shadow);
 }
 
 .info {
@@ -46,6 +46,7 @@
 
 .controls > div {
 	border-radius: 4px;
+	transition: 0.2s ease;
 }
 
 .icon {
@@ -63,17 +64,14 @@
 	margin-top: 0.15rem;
 }
 
+.icon-wrapper:hover,
 .currency-toggler:hover {
-	background: #66666690;
+	background: var(--clr-black-opacity-low);
 }
 
 .icon-wrapper {
 	padding: 0.35rem 0.5rem;
 	cursor: pointer;
-}
-
-.icon-wrapper:hover {
-	background: #44444490;
 }
 
 .icon {
