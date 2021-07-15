@@ -1,7 +1,7 @@
 .crypto-table {
 	width: 100%;
 	padding: 1rem 1rem 0.75rem;
-	border: solid 1px black;
+	border: solid 2px var(--clr-black-opacity-high);
 	border-radius: 4px;
 	color: var(--clr-text-primary);
 	background-color: var(--clr-background-primary);
@@ -17,6 +17,7 @@ table {
 }
 
 .table-item {
+	height: 50px;
 	position: relative;
 }
 
@@ -37,6 +38,25 @@ th.symbol {
 th.price-change {
 	width: 10%;
 }
+th.info {
+	width: 1%;
+}
+
+.drop-info {
+	/* position: absolute; */
+	top: -0.15rem;
+	right: 0.25rem;
+	font-size: 1.5rem;
+}
+
+.show-info:hover,
+.hide-info:hover {
+	color: var(--clr-primary);
+}
+
+.show-info {
+	transform: rotate(180deg);
+}
 
 .crypto-table tbody tr {
 	border-bottom: 0.5rem solid transparent;
@@ -54,13 +74,20 @@ td img {
 	transition: 0.2s ease;
 	border-bottom: 0 !important;
 }
+.table-info.show {
+	height: 0;
+	opacity: 1;
+	width: 100%;
+	transition: 0.2s ease;
+	border-bottom: 0 !important;
+}
 
 .border-bottom {
 	position: absolute;
 	left: 0;
 	bottom: -6px;
 	width: 100%;
-	height: calc(1rem / 20); /* fixes <1px borders */
+	height: calc(1rem / 24); /* fixes <1px borders */
 	background-color: var(--clr-black-opacity-high);
 }
 

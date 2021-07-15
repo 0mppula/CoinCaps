@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './SearchBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ cryptos, setFileredCryptos }) => {
 	const [query, setQuery] = useState('');
+	const inputRef = useRef();
 
 	const handleInputChange = (e) => {
 		let inputVal = e.target.value;
@@ -17,13 +18,38 @@ const SearchBar = ({ cryptos, setFileredCryptos }) => {
 		inputVal ? setFileredCryptos(filtered) : setFileredCryptos(cryptos);
 	};
 
+	const handleEsc = (e) => {
+		if (e.key === 'Escape' || e.key === 'e scape') {
+			setQuery('');
+			setFileredCryptos(cryptos);
+			inputRef.current.focus();
+		}
+	};
+
+	const handleClick = () => {
+		setQuery('');
+		setFileredCryptos(cryptos);
+		inputRef.current.focus();
+	};
+
 	return (
 		<div className="search-bar">
-			<input type="text" onChange={handleInputChange} placeholder="Search for a crypto..." />
+			<input
+				ref={inputRef}
+				type="text"
+				onChange={handleInputChange}
+				onKeyDown={handleEsc}
+				value={query}
+				placeholder="Search for a crypto..."
+			/>
 			{query ? (
-				<FontAwesomeIcon className="icon times" icon={faTimes} />
+				<FontAwesomeIcon className="icon times" icon={faTimes} onClick={handleClick} />
 			) : (
-				<FontAwesomeIcon className="icon search" icon={faSearch} />
+				<FontAwesomeIcon
+					className="icon search"
+					icon={faSearch}
+					onClick={() => inputRef.current.focus()}
+				/>
 			)}
 		</div>
 	);

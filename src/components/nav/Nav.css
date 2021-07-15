@@ -50,8 +50,11 @@
 	transition: 0.2s ease;
 }
 
-.icon {
+.moon,
+.usd,
+.sort {
 	font-size: 1.1rem;
+	color: var(--clr-black);
 }
 
 .currency-toggler {
@@ -67,17 +70,11 @@
 
 .icon-wrapper:hover,
 .currency-toggler:hover {
-	background: var(--clr-black-opacity-low);
+	background: var(--clr-black-opacity-high);
 }
 
 .icon-wrapper {
 	padding: 0.35rem 0.5rem;
-	cursor: pointer;
-}
-
-.icon {
-	color: var(--clr-black);
-	user-select: none;
 	cursor: pointer;
 }
 

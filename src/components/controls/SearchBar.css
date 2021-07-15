@@ -18,7 +18,7 @@
 }
 
 .search-bar [type='text']:focus {
-	border: 1px solid var(--clr-primary-opacity-high);
+	border: 1px solid var(--clr-primary-opacity-low);
 	border-radius: 4px;
 	outline: none;
 }
@@ -28,9 +28,8 @@
 	position: absolute;
 	right: 8px;
 	top: 7px;
-	font-size: 1.45rem !important;
-	color: var(--clr-black-opacity-high);
-	transition: 0.2s ease;
+	font-size: 1.45rem;
+	color: var(--clr-black-opacity-medium);
 }
 
 .times {
