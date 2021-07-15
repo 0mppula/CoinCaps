@@ -1,7 +1,18 @@
+// Progress:
 - Create Ajax request button that logs cryptocurrency data to console. ✔
 - Store cryptocurrencies in state as an array with init app. ✔
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
+- Style APP so that it look decant for further development.
+
+// Nav:
 - Style nav ✔
+
+// Search:
 - Style search ✔
+- Remove query from input when ESC is pressed or ❌ is clicked 👷‍♀️
+
+// CryptoList:
 - Style cryptolist
 - Style individual cryptos on list
+- Add new header for drop down icon 👷‍♀️
+- Add drop down icon to each individual crypto on list 👷‍♀️
