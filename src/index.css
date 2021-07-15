@@ -6,7 +6,6 @@
 	--clr-text-primary: #1b1b1b;
 	--clr-primary: #553285;
 	--clr-secondary: #1b5584;
-	--clr-secondary-hover: #7d858b;
 	--clr-danger: #ff1e19;
 	--clr-success: #00b239;
 	--clr-black: #1b1b1b;
@@ -16,7 +15,12 @@
 	--nav-heigth: 3rem;
 	--clr-black-opacity-low: rgba(27, 27, 27, 0.66);
 	--clr-black-opacity-high: rgba(27, 27, 27, 0.15);
+	--clr-black-opacity-medium: rgba(27, 27, 27, 0.33);
 	--clr-primary-opacity-low: rgba(85, 50, 133, 0.66);
+}
+
+html {
+	overflow-y: scroll;
 }
 
 * {
@@ -34,4 +38,10 @@
 	margin: 0 auto;
 	margin-top: var(--nav-heigth);
 	align-items: center;
+}
+
+.icon {
+	user-select: none;
+	cursor: pointer;
+	transition: 0.2s ease;
 }

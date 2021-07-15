@@ -9,7 +9,7 @@
 
 // Search:
 - Style search ✔
-- Remove query from input when ESC is pressed or ❌ is clicked 👷‍♀️
+- Remove query from input when ESC is pressed or ❌ is clicked 👷‍♀️ ✔
 
 // CryptoList:
 - Style cryptolist
