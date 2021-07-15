@@ -17,19 +17,22 @@ const CryptoItem = ({ crypto }) => {
 
 	const getPriceChangeClass = (change) => {
 		if (change > 0) {
-			return 'green';
+			return 'success';
 		} else if (change < 0) {
-			return 'red';
+			return 'danger';
 		} else {
 			return 'no-change';
 		}
 	};
 
 	return (
-		<tr>
+		<tr className="table-item">
 			<td>{crypto.market_cap_rank}</td>
-			<td>{crypto.name}</td>
+			<td>
+				<img src={crypto.image} alt={`${crypto.name} icon`} />
+			</td>
 			<td>{crypto.symbol.toUpperCase()}</td>
+			<td>{crypto.name}</td>
 			<td>{formatMarketCapUSD(crypto.market_cap)}</td>
 			<td>{formatUSD(crypto.current_price)}</td>
 			<td className={getPriceChangeClass(crypto.price_change_percentage_24h_in_currency)}>
@@ -38,6 +41,7 @@ const CryptoItem = ({ crypto }) => {
 			<td className={getPriceChangeClass(crypto.price_change_percentage_7d_in_currency)}>
 				{formatPercent(crypto.price_change_percentage_7d_in_currency)}
 			</td>
+			<div className="border-bottom"></div>
 		</tr>
 	);
 };

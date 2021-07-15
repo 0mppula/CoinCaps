@@ -2,14 +2,15 @@ import React from 'react';
 
 const TableHeaders = () => {
 	return (
-		<tr>
-			<th>Rank</th>
-			<th>Name</th>
-			<th>Symbol</th>
-			<th>Market Cap</th>
-			<th>Price</th>
-			<th>24h</th>
-			<th>7d</th>
+		<tr className="table-headers">
+			<th className="rank">Rank</th>
+			<th className="img"></th>
+			<th className="symbol">Symbol</th>
+			<th className="name">Name</th>
+			<th className="market">Market Cap</th>
+			<th className="price">Price</th>
+			<th className="price-change">24h</th>
+			<th className="price-change">7d</th>
 		</tr>
 	);
 };

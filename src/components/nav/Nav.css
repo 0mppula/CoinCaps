@@ -9,6 +9,7 @@
 	background: var(--clr-white);
 	color: var(--clr-black);
 	box-shadow: var(--box-shadow);
+	z-index: 100;
 }
 
 .info {

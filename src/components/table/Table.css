@@ -1,0 +1,75 @@
+.crypto-table {
+	width: 100%;
+	padding: 1rem 1rem 0.75rem;
+	border: solid 1px black;
+	border-radius: 4px;
+	color: var(--clr-text-primary);
+	background-color: var(--clr-background-primary);
+	margin-bottom: 3rem;
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: center;
+}
+
+.table-item {
+	position: relative;
+}
+
+.crypto-table thead {
+	font-size: 1.2rem;
+	border-bottom: 1rem solid transparent;
+}
+
+th.rank {
+	width: 5%;
+}
+th.img {
+	width: 7%;
+}
+th.symbol {
+	width: 7%;
+}
+th.price-change {
+	width: 10%;
+}
+
+.crypto-table tbody tr {
+	border-bottom: 0.5rem solid transparent;
+}
+
+td img {
+	height: 30px;
+}
+
+/* Info under crypto item */
+.table-info {
+	height: 0;
+	opacity: 0;
+	width: 100%;
+	transition: 0.2s ease;
+	border-bottom: 0 !important;
+}
+
+.border-bottom {
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	height: calc(1rem / 20); /* fixes <1px borders */
+	background-color: var(--clr-black-opacity-high);
+}
+
+.danger {
+	color: var(--clr-danger);
+}
+.success {
+	color: var(--clr-success);
+}
+.no-change {
+	color: var(--clr-text-primary);
+}
