@@ -3,3 +3,9 @@ https://api.coingecko.com/api/v3/coins/markets?vs_currency={usd}&order=market_ca
 
 URL for individual cryptocurrency trailing 7 day prices. 
 https://api.coingecko.com/api/v3/coins/{nano}/market_chart?vs_currency={usd}&days={7}&interval=daily
+
+h's:
+- 3
+- 3
+- 3
+- 4
