@@ -57,6 +57,9 @@ th.info {
 .show-info {
 	transform: rotate(180deg);
 }
+.hide-info {
+	transform: rotate(0);
+}
 
 .crypto-table tbody tr {
 	border-bottom: 0.5rem solid transparent;

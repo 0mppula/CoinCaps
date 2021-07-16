@@ -1,12 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import TableItem from './TableItem';
 import TableHeaders from './TableHeaders';
-import './Table.css';
 import TableInfo from './TableInfo';
+import './Table.css';
 
 const CryptoTable = ({ filteredCryptos }) => {
+	const [active, setActive] = useState('');
+
+	const toggle = (i) => {
+		if (active === i) {
+			return setActive('');
+		}
+		setActive(i);
+	};
+
 	return (
-		<div key={Math.random() * 10} className="crypto-table">
+		<div className="crypto-table">
 			<table>
 				<thead>
 					<TableHeaders key={Math.random * 10} />
@@ -14,7 +23,12 @@ const CryptoTable = ({ filteredCryptos }) => {
 				<tbody>
 					{filteredCryptos.map((crypto) => (
 						<Fragment key={`${crypto.id}_id`}>
-							<TableItem key={crypto.id} crypto={crypto} />
+							<TableItem
+								key={crypto.id}
+								crypto={crypto}
+								active={active}
+								setActive={() => toggle(crypto.id)}
+							/>
 							<TableInfo key={`${crypto.id}_info`} />
 						</Fragment>
 					))}

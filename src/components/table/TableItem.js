@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-const CryptoItem = ({ crypto }) => {
-	const [infoOpen, setInfoOpen] = useState(false);
-
-	const handleClick = (e) => {
-		setInfoOpen(!infoOpen);
+const CryptoItem = ({ crypto, active, setActive }) => {
+	const handleClick = (id) => {
+		setActive(id);
 	};
 
 	const formatPercent = (number) => `${new Number(number).toFixed(2)}%`;
@@ -50,20 +48,13 @@ const CryptoItem = ({ crypto }) => {
 				{formatPercent(crypto.price_change_percentage_7d_in_currency)}
 			</td>
 			<td className="drop-info">
-				{infoOpen ? (
-					<FontAwesomeIcon
-						icon={faChevronUp}
-						className="icon show-info"
-						onClick={handleClick}
-					/>
-				) : (
-					<FontAwesomeIcon
-						icon={faChevronUp}
-						className={'icon hide-info'}
-						onClick={handleClick}
-					/>
-				)}
+				<FontAwesomeIcon
+					icon={faChevronUp}
+					className={`icon ${active === crypto.id ? 'hide-info' : 'show-info'}`}
+					onClick={() => handleClick(crypto.id)}
+				/>
 			</td>
+
 			<td className="border-bottom"></td>
 		</tr>
 	);
