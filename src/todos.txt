@@ -9,10 +9,10 @@
 
 // Search:
 - Style search ✔
-- Remove query from input when ESC is pressed or ❌ is clicked 👷‍♀️ ✔
+- Remove query from input when ESC is pressed or ❌ is clicked  ✔
 
 // CryptoList:
 - Style cryptolist
 - Style individual cryptos on list
-- Add new header for drop down icon 👷‍♀️
-- Add drop down icon to each individual crypto on list 👷‍♀️
+- Add new header for drop down icon ✔
+- Add drop down icon to each individual crypto on list ✔
