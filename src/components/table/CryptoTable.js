@@ -29,7 +29,7 @@ const CryptoTable = ({ filteredCryptos }) => {
 								active={active}
 								setActive={() => toggle(crypto.id)}
 							/>
-							<TableInfo key={`${crypto.id}_info`} />
+							<TableInfo key={`${crypto.id}_info`} crypto={crypto} active={active} />
 						</Fragment>
 					))}
 				</tbody>

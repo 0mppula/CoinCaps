@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 
 const TableHeaders = () => {
-	const [infoOpen, setInfoOpen] = useState(false);
-
-	const handleClick = (e) => {
-		setInfoOpen(!infoOpen);
-	};
-
 	return (
 		<tr className="table-headers">
 			<th className="rank">Rank</th>

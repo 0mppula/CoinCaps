@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,7 +7,7 @@ const CryptoItem = ({ crypto, active, setActive }) => {
 		setActive(id);
 	};
 
-	const formatPercent = (number) => `${new Number(number).toFixed(2)}%`;
+	const formatPercent = (number) => `${number.toFixed(2)}%`;
 	const formatUSD = (price) =>
 		new Intl.NumberFormat('en-US', {
 			style: 'currency',

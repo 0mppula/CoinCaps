@@ -43,7 +43,6 @@ th.info {
 }
 
 .drop-info {
-	/* position: absolute; */
 	top: -0.15rem;
 	right: 0.25rem;
 	font-size: 1.5rem;
@@ -77,13 +76,14 @@ td img {
 	transition: 0.2s ease;
 	border-bottom: 0 !important;
 }
+
 .table-info.show {
 	height: 0;
 	opacity: 1;
-	width: 100%;
 	transition: 0.2s ease;
-	border-bottom: 0 !important;
+	width: 100%;
 }
+/* Info under crypto item */
 
 .border-bottom {
 	position: absolute;
