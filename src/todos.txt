@@ -16,3 +16,9 @@
 - Style individual cryptos on list
 - Add new header for drop down icon ✔
 - Add drop down icon to each individual crypto on list ✔
+
+// CryptoItem:
+- Asses the data from coin gecko api.
+- Plan the layout of the crypto item based on that data.
+- Add drop down funcctionality to cryptoitem.
+- Populate crypto item (dropdown) with data [volume, ath, ath, date, 30d prices, 30d price action chart]. 
