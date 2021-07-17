@@ -75,13 +75,13 @@ td img {
 	width: 100%;
 	transition: 0.2s ease;
 	border-bottom: 0 !important;
+	line-height: 0;
 }
 
-.table-info.show {
-	height: 0;
+.show {
 	opacity: 1;
 	transition: 0.2s ease;
-	width: 100%;
+	line-height: 2;
 }
 /* Info under crypto item */
 
