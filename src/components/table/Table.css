@@ -110,14 +110,15 @@ td img {
 .chart {
 	width: 120px;
 	height: 66px;
-	background-color: cadetblue;
+	background-color: var(--clr-background-primary);
 	border: solid 1px var(--clr-black-opacity-high);
 	transition: var(--transition-time);
 }
 
 .chart-hidden {
-	height: 10px;
+	width: 10px;
 	border: none;
+	transition: var(--transition-time);
 }
 /* End Chart */
 

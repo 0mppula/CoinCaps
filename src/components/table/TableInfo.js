@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import Chart from './Chart';
 let dateFormat = require('dateformat');
 
 const TableInfo = ({ crypto, active }) => {
-	const [prices, setPrices] = useState([]);
+	const [xPrices, setXPrices] = useState([]);
+	const [yPrices, setYPrices] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+	const isActive = () => {
+		let value = crypto.id === active;
+		return value;
+	};
+
 	useEffect(() => {
-		if (crypto.id === active) {
-			getCryptoData();
-		}
+		isActive() && getCryptoData();
 	}, [active]);
 
 	const getCryptoData = async () => {
@@ -16,8 +21,10 @@ const TableInfo = ({ crypto, active }) => {
 		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=usd&days=30&interval=daily`;
 		const response = await fetch(url);
 		const { prices: priceData } = await response.json();
-		const monthly = priceData.map((price) => price[1]);
-		setPrices(monthly);
+		const yMonthly = priceData.map((price) => price[1]);
+		const xMonthly = yMonthly.map((date, i) => i);
+		setXPrices(xMonthly);
+		setYPrices(yMonthly);
 		setLoading(false);
 	};
 
@@ -55,7 +62,11 @@ const TableInfo = ({ crypto, active }) => {
 					</div>
 					<div className="info-section">
 						<p>
-							<canvas id="chart" className="chart"></canvas>
+							{loading ? (
+								<h3>LOADING...</h3>
+							) : (
+								<Chart xPrices={xPrices} yPrices={yPrices} isActive={isActive()} />
+							)}
 						</p>
 					</div>
 				</div>
@@ -84,7 +95,7 @@ const TableInfo = ({ crypto, active }) => {
 					</div>
 					<div>
 						<p>
-							<canvas id="chart" className="chart-hidden"></canvas>
+							<canvas className="chart-hidden"></canvas>
 						</p>
 					</div>
 				</div>
@@ -92,7 +103,7 @@ const TableInfo = ({ crypto, active }) => {
 		</tr>
 	);
 
-	return <>{crypto.id === active ? visibleInfo : hiddenInfo}</>;
+	return <>{isActive() ? visibleInfo : hiddenInfo}</>;
 };
 
 export default TableInfo;
