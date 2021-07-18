@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import HiddenInfo from './HiddenInfo';
-import VisibleInfo from './VisibleInfo';
 let dateFormat = require('dateformat');
 
 const TableInfo = ({ crypto, active }) => {
@@ -23,26 +21,78 @@ const TableInfo = ({ crypto, active }) => {
 		setLoading(false);
 	};
 
-	const formatUSD = (price) =>
-		new Intl.NumberFormat('en-US', {
-			style: 'currency',
-			currency: 'usd',
-		}).format(price);
-
-	return (
-		<>
-			{crypto.id === active ? (
-				<VisibleInfo
-					supply={parseInt(crypto.circulating_supply).toLocaleString()}
-					volume={parseInt(crypto.total_volume).toLocaleString()}
-					ath={formatUSD(crypto.ath)}
-					atdh={dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}
-				/>
-			) : (
-				<HiddenInfo />
-			)}
-		</>
+	const visibleInfo = (
+		<tr className="table-info show">
+			<td colSpan={8}>
+				<div className="flex">
+					<div className="info-section">
+						<p>
+							<strong>Circulating:</strong>
+						</p>
+						<p>
+							<strong>Volume:</strong>
+						</p>
+					</div>
+					<div className="info-section">
+						<p>{`${parseInt(crypto.circulating_supply).toLocaleString()}`}</p>
+						<p className="value">{`${parseInt(
+							crypto.total_volume
+						).toLocaleString()}`}</p>
+					</div>
+					<div className="info-section">
+						<p>
+							<strong>All Time High:</strong>
+						</p>
+						<p>
+							<strong>All Time High Date:</strong>
+						</p>
+					</div>
+					<div className="info-section">
+						<p className="value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
+						<p className="value">
+							{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}
+						</p>
+					</div>
+					<div className="info-section">
+						<p>
+							<canvas id="chart" className="chart"></canvas>
+						</p>
+					</div>
+				</div>
+			</td>
+		</tr>
 	);
+	const hiddenInfo = (
+		<tr className="table-info">
+			<td colSpan={8}>
+				<div className="flex">
+					<div>
+						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
+					</div>
+					<div>
+						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
+					</div>
+					<div>
+						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
+					</div>
+					<div>
+						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
+					</div>
+					<div>
+						<p>
+							<canvas id="chart" className="chart-hidden"></canvas>
+						</p>
+					</div>
+				</div>
+			</td>
+		</tr>
+	);
+
+	return <>{crypto.id === active ? visibleInfo : hiddenInfo}</>;
 };
 
 export default TableInfo;
