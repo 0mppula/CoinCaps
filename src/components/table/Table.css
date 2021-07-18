@@ -104,6 +104,7 @@ td img {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+	margin: 0 2rem;
 }
 
 /* Chart */
@@ -113,6 +114,7 @@ td img {
 	background-color: var(--clr-background-primary);
 	border: solid 1px var(--clr-black-opacity-high);
 	transition: var(--transition-time);
+	margin-right: 2rem;
 }
 
 .chart-hidden {
