@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import HiddenInfo from './HiddenInfo';
+import VisibleInfo from './VisibleInfo';
+let dateFormat = require('dateformat');
 
 const TableInfo = ({ crypto, active }) => {
 	const [prices, setPrices] = useState([]);
@@ -20,30 +23,26 @@ const TableInfo = ({ crypto, active }) => {
 		setLoading(false);
 	};
 
-	const visibleInfo = (
-		<tr className="table-info show">
-			<td colSpan={2}>Volume:</td>
-			<td colSpan={2}>{`${parseInt(crypto.circulating_supply).toLocaleString()}`}</td>
-			<td>TEST:</td>
-			<td>500,100,500</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	);
-	const hiddenInfo = (
-		<tr className="table-info">
-			<td colSpan={2}>{'\u00A0'}</td>
-			<td colSpan={2}>{'\u00A0'}</td>
-			<td>{'\u00A0'}</td>
-			<td>{'\u00A0'}</td>
-			<td>{'\u00A0'}</td>
-			<td>{'\u00A0'}</td>
-			<td>{'\u00A0'}</td>
-		</tr>
-	);
+	const formatUSD = (price) =>
+		new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'usd',
+		}).format(price);
 
-	return <>{crypto.id === active ? visibleInfo : hiddenInfo}</>;
+	return (
+		<>
+			{crypto.id === active ? (
+				<VisibleInfo
+					supply={parseInt(crypto.circulating_supply).toLocaleString()}
+					volume={parseInt(crypto.total_volume).toLocaleString()}
+					ath={formatUSD(crypto.ath)}
+					atdh={dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}
+				/>
+			) : (
+				<HiddenInfo />
+			)}
+		</>
+	);
 };
 
 export default TableInfo;

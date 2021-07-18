@@ -1,0 +1,82 @@
+import React, { useState, useEffect } from 'react';
+
+const TableInfo = ({ crypto, active }) => {
+	const [prices, setPrices] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		if (crypto.id === active) {
+			getCryptoData();
+		}
+	}, [active]);
+
+	const getCryptoData = async () => {
+		setLoading(true);
+		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=usd&days=30&interval=daily`;
+		const response = await fetch(url);
+		const { prices: priceData } = await response.json();
+		const monthly = priceData.map((price) => price[1]);
+		setPrices(monthly);
+		setLoading(false);
+	};
+
+	const visibleInfo = (
+		<tr className="table-info show">
+			<td colSpan={2}>
+				<strong>Circulating:</strong>
+				<p>{`${parseInt(crypto.circulating_supply).toLocaleString()}`}</p>
+			</td>
+			<td colSpan={2}>
+				<strong>Volume:</strong>
+				<p>{`${parseInt(crypto.total_volume).toLocaleString()}`}</p>
+			</td>
+			<td colSpan={1}>
+				<strong>All Time high:</strong>
+				<p>{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
+			</td>
+			<td colSpan={1}>
+				<strong>ATH Date:</strong>
+				<p>{`${new Date(crypto.ath_date).toLocaleDateString()}`}</p>
+			</td>
+			<td colSpan={2}>
+				<strong>30d:</strong>
+				<p>{`${new Date(crypto.ath_date).toLocaleDateString()}`}</p>
+			</td>
+		</tr>
+	);
+	const hiddenInfo = (
+		<tr className="table-info">
+			{/* <td colSpan={2}>{'\u00A0'}</td>
+			<td colSpan={2}>{'\u00A0'}</td>
+			<td>{'\u00A0'}</td>
+			<td>{'\u00A0'}</td>
+			<td>{'\u00A0'}</td>
+			<td>{'\u00A0'}</td>
+			<td>{'\u00A0'}</td> */}
+			<td colSpan={2}>
+				<strong>{'\u00A0'}</strong>
+				<p>{'\u00A0'}</p>
+			</td>
+			<td colSpan={2}>
+				<strong>{'\u00A0'}</strong>
+				<p>{'\u00A0'}</p>
+			</td>
+			<td colSpan={1}>
+				<strong>{'\u00A0'}</strong>
+				<p>{'\u00A0'}</p>
+			</td>
+			<td colSpan={1}>
+				<strong>{'\u00A0'}</strong>
+				<p>{'\u00A0'}</p>
+			</td>
+			<td colSpan={2}>
+				<strong>{'\u00A0'}</strong>
+				<p>{'\u00A0'}</p>
+			</td>
+		</tr>
+	);
+
+	return <>{crypto.id === active ? visibleInfo : hiddenInfo}</>;
+};
+
+export default TableInfo;

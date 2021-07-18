@@ -1,12 +1,17 @@
 .crypto-table {
+	--transition-time: 0.5s ease;
+}
+
+.crypto-table {
 	width: 100%;
 	padding: 1rem 1rem 0.75rem;
 	border: solid 2px var(--clr-black-opacity-high);
-	border-radius: 4px;
 	color: var(--clr-text-primary);
 	background-color: var(--clr-background-primary);
+	border-radius: 4px;
 	margin-bottom: 3rem;
 	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 table {
@@ -16,16 +21,12 @@ table {
 	text-align: center;
 }
 
-.table-item {
-	height: 50px;
-	position: relative;
-}
-
 .crypto-table thead {
 	font-size: 1.2rem;
 	border-bottom: 1rem solid transparent;
 }
 
+/* Headers */
 th.rank {
 	width: 5%;
 }
@@ -41,8 +42,18 @@ th.price-change {
 th.info {
 	width: 1%;
 }
+/* End Headers */
 
-.drop-info {
+.table-item {
+	height: 55px;
+	position: relative;
+}
+
+.crypto-table tbody tr {
+	border-bottom: 0.5rem solid transparent;
+}
+
+.drop-info-icon {
 	top: -0.15rem;
 	right: 0.25rem;
 	font-size: 1.5rem;
@@ -60,37 +71,68 @@ th.info {
 	transform: rotate(0);
 }
 
-.crypto-table tbody tr {
-	border-bottom: 0.5rem solid transparent;
-}
-
 td img {
+	margin-top: 0.35rem;
 	height: 30px;
 }
 
 /* Info under crypto item */
 .table-info {
+	position: relative;
 	height: 0;
-	opacity: 0;
+	opacity: 0.1;
 	width: 100%;
-	transition: 0.2s ease;
+	transition: var(--transition-time);
 	border-bottom: 0 !important;
 	line-height: 0;
 }
 
+.flex div p {
+	margin-bottom: 0.75rem;
+}
+
 .show {
 	opacity: 1;
-	transition: 0.2s ease;
 	line-height: 2;
+	transition: 2s ease;
 }
+
+.flex {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	border-right: solid 0.8rem transparent;
+	border-left: solid 0.8rem transparent;
+}
+
+/* Chart */
+.chart {
+	width: 120px;
+	height: 66px;
+	border: solid 1px var(--clr-black-opacity-high);
+}
+/* End Chart */
+
 /* Info under crypto item */
 
 .border-bottom {
 	position: absolute;
 	left: 0;
-	bottom: -6px;
+	opacity: 1 !important;
+	bottom: -12px;
 	width: 100%;
-	height: calc(1rem / 24); /* fixes <1px borders */
+	transition: var(--transition-time);
+	height: calc(1rem / 32) !important; /* fixes <1px borders */
+	background-color: var(--clr-black-opacity-high);
+}
+
+.border-bottom.active {
+	position: absolute;
+	left: 0;
+	opacity: 1 !important;
+	bottom: -92px;
+	width: 100%;
+	height: calc(1rem / 32) !important; /* fixes <1px borders */
 	background-color: var(--clr-black-opacity-high);
 }
 
@@ -102,4 +144,11 @@ td img {
 }
 .no-change {
 	color: var(--clr-text-primary);
+}
+
+@-moz-document url-prefix() {
+	.border-bottom {
+		bottom: 0;
+		height: calc(1rem / 32) !important; /* fixes <1px borders */
+	}
 }

@@ -34,7 +34,7 @@ const CryptoItem = ({ crypto, active, setActive }) => {
 	return (
 		<tr className="table-item">
 			<td>{crypto.market_cap_rank}</td>
-			<td className="crypto-img">
+			<td>
 				<img src={crypto.image} alt={`${crypto.name} icon`} />
 			</td>
 			<td>{crypto.symbol.toUpperCase()}</td>
@@ -47,7 +47,7 @@ const CryptoItem = ({ crypto, active, setActive }) => {
 			<td className={getPriceChangeClass(crypto.price_change_percentage_7d_in_currency)}>
 				{formatPercent(crypto.price_change_percentage_7d_in_currency)}
 			</td>
-			<td className="drop-info">
+			<td className="drop-info-icon">
 				<FontAwesomeIcon
 					icon={faChevronUp}
 					className={`icon ${active === crypto.id ? 'hide-info' : 'show-info'}`}
@@ -55,7 +55,9 @@ const CryptoItem = ({ crypto, active, setActive }) => {
 				/>
 			</td>
 
-			<td className="border-bottom"></td>
+			<td
+				className={`${active === crypto.id ? 'border-bottom active' : 'border-bottom '}`}
+			></td>
 		</tr>
 	);
 };
