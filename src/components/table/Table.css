@@ -54,7 +54,7 @@ th.price {
 }
 
 th.info {
-	width: 1%;
+	width: 3%;
 }
 
 /* End Headers */
@@ -86,7 +86,7 @@ th.info {
 	transform: rotate(0);
 }
 
-td img {
+.table-item td img {
 	margin-top: 0.35rem;
 	height: 30px;
 }
@@ -126,6 +126,24 @@ td img {
 }
 
 /* Chart */
+.chart-loader-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.chart-loader-wrapper .loading {
+	margin-top: -0.15rem;
+	font-weight: 600;
+}
+
+.chart-loader-wrapper img {
+	margin-top: -1.75rem;
+	height: 60px;
+	animation: spin 1s linear infinite;
+}
+
 .chart-info-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -194,3 +212,15 @@ td img {
 		height: calc(1rem / 32) !important; /* fixes <1px borders */
 	}
 }
+
+/* Keyframes */
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* End Keyframes */

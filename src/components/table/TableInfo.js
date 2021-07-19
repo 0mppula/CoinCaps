@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Chart from './Chart';
 import { formatPrice } from '../../utils/FormatValues';
+import Loader from './Loader';
 let dateFormat = require('dateformat');
 
 const TableInfo = ({ crypto, active, activeCurrency }) => {
@@ -64,18 +65,26 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 			</td>
 
 			<td colSpan={2}>
-				<div className="chart-info-wrapper">
-					{loading ? (
-						'LOADING...'
-					) : (
-						<>
-							<p className="info-header">Price 30d</p>
-							<div className="chart-wrapper">
-								<Chart xPrices={xPrices} yPrices={yPrices} />
-							</div>
-						</>
-					)}
-				</div>
+				{/* {loading && <Loader />}
+				{!loading && (
+					<>
+						<p className="info-header">Price 30d</p>
+						<div className="chart-wrapper">
+							<Chart xPrices={xPrices} yPrices={yPrices} />
+						</div>
+					</>
+				)} */}
+
+				{loading ? (
+					<Loader />
+				) : (
+					<>
+						<p className="info-header">Price 30d</p>
+						<div className="chart-wrapper">
+							<Chart xPrices={xPrices} yPrices={yPrices} />
+						</div>
+					</>
+				)}
 			</td>
 			<td></td>
 		</tr>
