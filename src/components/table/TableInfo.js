@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Chart from './Chart';
 import { formatPrice } from '../../utils/FormatValues';
-import Loader from './Loader';
+import Loader from '../loaders/LoaderSmall';
 let dateFormat = require('dateformat');
 
 const TableInfo = ({ crypto, active, activeCurrency }) => {

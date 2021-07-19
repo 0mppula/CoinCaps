@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import TableItem from './TableItem';
 import TableHeaders from './TableHeaders';
 import TableInfo from './TableInfo';
-import './Table.css';
 
 const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
 	const [active, setActive] = useState('');
