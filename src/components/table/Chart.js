@@ -24,6 +24,7 @@ const chart = ({ xPrices, yPrices }) => {
 	};
 
 	const options = {
+		maintainAspectRatio: false,
 		plugins: {
 			tooltip: {
 				enabled: false,
@@ -52,7 +53,7 @@ const chart = ({ xPrices, yPrices }) => {
 			<Line
 				id="chart"
 				className="chart"
-				width={120}
+				width={145}
 				height={66}
 				data={data}
 				options={options}

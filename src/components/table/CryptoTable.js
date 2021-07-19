@@ -17,9 +17,7 @@ const CryptoTable = ({ filteredCryptos }) => {
 	return (
 		<div className="crypto-table">
 			<table>
-				<thead>
-					<TableHeaders key={Math.random * 10} />
-				</thead>
+				<TableHeaders key={Math.random * 10} />
 				<tbody>
 					{filteredCryptos.map((crypto) => (
 						<Fragment key={`${crypto.id}_id`}>

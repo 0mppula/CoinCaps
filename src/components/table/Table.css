@@ -26,6 +26,18 @@ table {
 	border-bottom: 1rem solid transparent;
 }
 
+.table-headers {
+	font-size: 1.5rem;
+}
+
+.thead-border-bottom {
+	border-bottom: solid 2px;
+}
+
+.thead-gap-bottom {
+	height: 8px;
+}
+
 /* Headers */
 th.rank {
 	width: 5%;
@@ -96,25 +108,29 @@ td img {
 	margin-bottom: 0.75rem;
 }
 
+/* .info-left {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+} */
+
 .info-section p {
-	text-align: left;
+	text-align: center;
 }
 
-.flex {
+.info-container {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	margin: 0 2rem;
+	/* margin: 0 2rem; */
 }
 
 /* Chart */
 .chart {
-	width: 120px;
-	height: 66px;
 	background-color: var(--clr-background-primary);
 	border: solid 1px var(--clr-black-opacity-high);
 	transition: var(--transition-time);
-	margin-right: 2rem;
+	/* margin-right: 2rem; */
 }
 
 .chart-hidden {

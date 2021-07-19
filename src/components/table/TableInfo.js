@@ -31,39 +31,35 @@ const TableInfo = ({ crypto, active }) => {
 	const visibleInfo = (
 		<tr className="table-info show">
 			<td colSpan={8}>
-				<div className="flex">
+				<div className="info-container">
 					<div className="info-section">
-						<p>
-							<strong>Circulating:</strong>
-						</p>
-						<p>
-							<strong>Volume:</strong>
-						</p>
-					</div>
-					<div className="info-section">
+						<strong>Circulating:</strong>
 						<p>{`${parseInt(crypto.circulating_supply).toLocaleString()}`}</p>
+					</div>
+
+					<div className="info-section">
+						<strong>Volume:</strong>
 						<p className="value">{`${parseInt(
 							crypto.total_volume
 						).toLocaleString()}`}</p>
 					</div>
+
 					<div className="info-section">
-						<p>
-							<strong>All Time High:</strong>
-						</p>
-						<p>
-							<strong>All Time High Date:</strong>
-						</p>
-					</div>
-					<div className="info-section">
+						<strong>All Time High:</strong>
 						<p className="value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
+					</div>
+
+					<div className="info-section">
+						<strong>All Time High Date:</strong>
 						<p className="value">
 							{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}
 						</p>
 					</div>
+
 					<div className="info-section">
 						<p>
 							{loading ? (
-								<h3>LOADING...</h3>
+								'LOADING...'
 							) : (
 								<Chart xPrices={xPrices} yPrices={yPrices} isActive={isActive()} />
 							)}
@@ -76,7 +72,7 @@ const TableInfo = ({ crypto, active }) => {
 	const hiddenInfo = (
 		<tr className="table-info">
 			<td colSpan={8}>
-				<div className="flex">
+				<div className="info-container">
 					<div>
 						<strong>{'\u00A0'}</strong>
 						<p>{'\u00A0'}</p>
