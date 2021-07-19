@@ -1,0 +1,60 @@
+/* Small */
+.chart-loader-wrapper-smallchart-loader-wrapper-small {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.chart-loader-wrapper-small .loading {
+	margin-top: -0.15rem;
+	font-weight: 600;
+}
+
+.chart-loader-wrapper-small img {
+	margin-top: -1.75rem;
+	height: 60px;
+	animation: spin 1s linear infinite;
+}
+
+.chart-loader-wrapper-smallchart-loader-wrapper-small {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* End Small */
+
+/* Large */
+.chart-loader-wrapper-large {
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.chart-loader-wrapper-large .loading {
+	font-size: 1.35rem;
+	margin-top: 1rem;
+	font-weight: 600;
+	width: 100%;
+	text-align: center;
+}
+
+.chart-loader-wrapper-large img {
+	height: 135px;
+	animation: spin 2s linear infinite;
+}
+/* End Large */
+
+/* Keyframes */
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* End Keyframes */
