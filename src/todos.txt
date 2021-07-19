@@ -2,22 +2,23 @@
 - Create Ajax request button that logs cryptocurrency data to console. ✔
 - Store cryptocurrencies in state as an array with init app. ✔
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
-- Style APP so that it look decant for further development.
+- Style APP so that it look decant for further development. ✔
 
 // Nav:
 - Style nav ✔
-- Name the project Coin Caps and place holder logo.
+- Name the project Coin Caps and add a place holder logo. ✔
 
 // Search:
 - Style search ✔
 - Remove query from input when ESC is pressed or ❌ is clicked  ✔
 
 // CryptoList:
-- Style cryptolist
-- Style individual cryptos on list
+- Style cryptolist ✔
+- Style individual cryptos on list ✔
 - Add new header for drop down icon ✔
 - Add drop down icon to each individual crypto on list ✔
 - Segregate headers from list add (border bottom). ✔
+- Add loader to crypto list. ✔
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -27,7 +28,7 @@
 - Switch to column setup add header to chart. ✔
 
 // Loader
-- Create small spinning loader for chart load.
+- Create small spinning loader for chart load. ✔
 
 // Utlis
 - Migrate all formatting functions to utils subdirectory. ✔
