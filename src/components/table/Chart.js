@@ -10,8 +10,6 @@ const chart = ({ xPrices, yPrices }) => {
 		return color;
 	};
 
-	getColor();
-
 	const data = {
 		labels: xPrices,
 		datasets: [

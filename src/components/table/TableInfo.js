@@ -20,7 +20,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 
 	const getCryptoData = async () => {
 		setLoading(true);
-		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=usd&days=30&interval=daily`;
+		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=${activeCurrency.currency}&days=30&interval=daily`;
 		const response = await fetch(url);
 		const { prices: priceData } = await response.json();
 		const yMonthly = priceData.map((price) => price[1]);
@@ -71,7 +71,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 						<>
 							<p className="info-header">Price 30d</p>
 							<div className="chart-wrapper">
-								<Chart xPrices={xPrices} yPrices={yPrices} isActive={isActive()} />
+								<Chart xPrices={xPrices} yPrices={yPrices} />
 							</div>
 						</>
 					)}
