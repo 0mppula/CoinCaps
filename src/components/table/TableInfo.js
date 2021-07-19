@@ -38,45 +38,35 @@ const TableInfo = ({ crypto, active }) => {
 			</td>
 
 			<td colSpan={1}>
-				<p className="info-header">Volume</p>
-				<p className="info-value">{`${parseInt(crypto.total_volume).toLocaleString()}`}</p>
+				<p className="info-header">High 24h</p>
+				<p className="info-value">{`$${parseInt(crypto.high_24h).toLocaleString()}`}</p>
 			</td>
-
+			<td colSpan={1}>
+				<p className="info-header">Low 24h</p>
+				<p className="info-value">{`$${parseInt(crypto.low_24h).toLocaleString()}`}</p>
+			</td>
 			<td colSpan={1}>
 				<p className="info-header">All Time High</p>
 				<p className="info-value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
 			</td>
 
 			<td colSpan={1}>
-				<p className="info-header">All Time High Date</p>
-				<p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p>
-			</td>
-
-			<td colSpan={1}>
-				<p className="info-header">All Time High Date</p>
+				<p className="info-header">ATH Date</p>
 				<p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p>
 			</td>
 
 			<td colSpan={2}>
-				<div className="info-section">
-					<p>
-						{loading ? (
-							'LOADING...'
-						) : (
-							<>
-								<p>
-									<p className="info-header">Price 30d</p>
-								</p>
-								<div className="chart-wrapper">
-									<Chart
-										xPrices={xPrices}
-										yPrices={yPrices}
-										isActive={isActive()}
-									/>
-								</div>
-							</>
-						)}
-					</p>
+				<div className="chart-info-wrapper">
+					{loading ? (
+						'LOADING...'
+					) : (
+						<>
+							<p className="info-header">Price 30d</p>
+							<div className="chart-wrapper">
+								<Chart xPrices={xPrices} yPrices={yPrices} isActive={isActive()} />
+							</div>
+						</>
+					)}
 				</div>
 			</td>
 		</tr>

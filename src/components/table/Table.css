@@ -23,19 +23,19 @@ table {
 
 .crypto-table thead {
 	font-size: 1.2rem;
-	border-bottom: 1rem solid transparent;
+	border-bottom: 2px solid;
 }
 
 .table-headers {
 	font-size: 1.5rem;
 }
 
-.thead-border-bottom {
-	border-bottom: solid 2px;
+.thead-margin-bottom {
+	height: 1rem;
 }
 
-.thead-gap-bottom {
-	height: 8px;
+.table-margin-top {
+	height: 0.4rem;
 }
 
 /* Headers */
@@ -45,18 +45,18 @@ th.rank {
 th.img {
 	width: 7%;
 }
-/* th.symbol {
-	width: 5%;
-} */
-th.price-change,
-th.info {
-	width: 1% !important;
+th.price-change {
+	width: 70px;
+}
+
+th.price {
+	width: 20%;
 }
 
 th.info {
 	width: 1%;
-	color: transparent !important;
 }
+
 /* End Headers */
 
 .table-item {
@@ -107,10 +107,6 @@ td img {
 	line-height: 2;
 }
 
-.info-section {
-	margin-bottom: 0.75rem;
-}
-
 .info-container {
 	display: flex;
 	width: 100%;
@@ -121,16 +117,31 @@ td img {
 	font-weight: 800;
 }
 
+.info-value {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 68px;
+	margin-bottom: 1.25rem;
+}
+
 /* Chart */
+.chart-info-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .chart-wrapper {
 	width: 130px;
+	margin-bottom: 1.25rem;
 }
 
 .chart {
 	background-color: var(--clr-background-primary);
 	border: solid 1px var(--clr-black-opacity-high);
 	transition: var(--transition-time);
-	/* margin-right: 2rem; */
 }
 
 .chart-hidden {
@@ -157,7 +168,7 @@ td img {
 	position: absolute;
 	left: 0;
 	opacity: 1 !important;
-	bottom: -92px;
+	bottom: -124px;
 	width: 100%;
 	transition: var(--transition-time);
 	height: calc(1rem / 32) !important; /* fixes <1px borders */

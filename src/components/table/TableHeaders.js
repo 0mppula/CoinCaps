@@ -15,13 +15,10 @@ const TableHeaders = () => {
 					<th className="price-change">7d</th>
 					<th className="info">&nbsp;&nbsp;</th>
 				</tr>
+				<tr className="thead-margin-bottom">
+					<td></td>
+				</tr>
 			</thead>
-			<tr className="thead-border-bottom">
-				<td></td>
-			</tr>
-			<tr>
-				<td className="thead-gap-bottom"></td>
-			</tr>
 		</>
 	);
 };
