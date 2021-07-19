@@ -159,9 +159,11 @@ td img {
 	opacity: 1 !important;
 	bottom: -12px;
 	width: 100%;
-	transition: var(--transition-time);
+	transition: 1.8s linear;
+	transition: 0.18s;
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
 	background-color: var(--clr-black-opacity-high);
+	z-index: 10;
 }
 
 .border-bottom.active {
@@ -173,6 +175,7 @@ td img {
 	transition: var(--transition-time);
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
 	background-color: var(--clr-black-opacity-high);
+	z-index: 10;
 }
 
 .danger {

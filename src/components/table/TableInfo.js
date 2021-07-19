@@ -77,6 +77,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 					)}
 				</div>
 			</td>
+			<td></td>
 		</tr>
 	);
 	const hiddenInfo = (
