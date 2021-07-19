@@ -30,41 +30,53 @@ const TableInfo = ({ crypto, active }) => {
 
 	const visibleInfo = (
 		<tr className="table-info show">
-			<td colSpan={8}>
-				<div className="info-container">
-					<div className="info-section">
-						<strong>Circulating:</strong>
-						<p>{`${parseInt(crypto.circulating_supply).toLocaleString()}`}</p>
-					</div>
+			<td colSpan={2}>
+				<p className="info-header">Circulating</p>
+				<p className="info-value">{`${parseInt(
+					crypto.circulating_supply
+				).toLocaleString()}`}</p>
+			</td>
 
-					<div className="info-section">
-						<strong>Volume:</strong>
-						<p className="value">{`${parseInt(
-							crypto.total_volume
-						).toLocaleString()}`}</p>
-					</div>
+			<td colSpan={1}>
+				<p className="info-header">Volume</p>
+				<p className="info-value">{`${parseInt(crypto.total_volume).toLocaleString()}`}</p>
+			</td>
 
-					<div className="info-section">
-						<strong>All Time High:</strong>
-						<p className="value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
-					</div>
+			<td colSpan={1}>
+				<p className="info-header">All Time High</p>
+				<p className="info-value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
+			</td>
 
-					<div className="info-section">
-						<strong>All Time High Date:</strong>
-						<p className="value">
-							{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}
-						</p>
-					</div>
+			<td colSpan={1}>
+				<p className="info-header">All Time High Date</p>
+				<p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p>
+			</td>
 
-					<div className="info-section">
-						<p>
-							{loading ? (
-								'LOADING...'
-							) : (
-								<Chart xPrices={xPrices} yPrices={yPrices} isActive={isActive()} />
-							)}
-						</p>
-					</div>
+			<td colSpan={1}>
+				<p className="info-header">All Time High Date</p>
+				<p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p>
+			</td>
+
+			<td colSpan={2}>
+				<div className="info-section">
+					<p>
+						{loading ? (
+							'LOADING...'
+						) : (
+							<>
+								<p>
+									<p className="info-header">Price 30d</p>
+								</p>
+								<div className="chart-wrapper">
+									<Chart
+										xPrices={xPrices}
+										yPrices={yPrices}
+										isActive={isActive()}
+									/>
+								</div>
+							</>
+						)}
+					</p>
 				</div>
 			</td>
 		</tr>
@@ -74,19 +86,19 @@ const TableInfo = ({ crypto, active }) => {
 			<td colSpan={8}>
 				<div className="info-container">
 					<div>
-						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
 						<p>{'\u00A0'}</p>
 					</div>
 					<div>
-						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
 						<p>{'\u00A0'}</p>
 					</div>
 					<div>
-						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
 						<p>{'\u00A0'}</p>
 					</div>
 					<div>
-						<strong>{'\u00A0'}</strong>
+						<p>{'\u00A0'}</p>
 						<p>{'\u00A0'}</p>
 					</div>
 					<div>

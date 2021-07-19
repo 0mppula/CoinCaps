@@ -45,14 +45,17 @@ th.rank {
 th.img {
 	width: 7%;
 }
-th.symbol {
-	width: 7%;
+/* th.symbol {
+	width: 5%;
+} */
+th.price-change,
+th.info {
+	width: 1% !important;
 }
-th.price-change {
-	width: 10%;
-}
+
 th.info {
 	width: 1%;
+	color: transparent !important;
 }
 /* End Headers */
 
@@ -108,24 +111,21 @@ td img {
 	margin-bottom: 0.75rem;
 }
 
-/* .info-left {
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
-} */
-
-.info-section p {
-	text-align: center;
-}
-
 .info-container {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	/* margin: 0 2rem; */
+}
+
+.info-header {
+	font-weight: 800;
 }
 
 /* Chart */
+.chart-wrapper {
+	width: 130px;
+}
+
 .chart {
 	background-color: var(--clr-background-primary);
 	border: solid 1px var(--clr-black-opacity-high);

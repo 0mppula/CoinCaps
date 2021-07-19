@@ -53,7 +53,7 @@ const chart = ({ xPrices, yPrices }) => {
 			<Line
 				id="chart"
 				className="chart"
-				width={145}
+				width={130}
 				height={66}
 				data={data}
 				options={options}

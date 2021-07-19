@@ -34,7 +34,7 @@ html {
 	display: flex;
 	flex-direction: column;
 	min-height: calc(100vh - var(--nav-heigth));
-	width: min(1200px, 90vw);
+	width: min(1200px, 95vw);
 	margin: 0 auto;
 	margin-top: var(--nav-heigth);
 	align-items: center;
