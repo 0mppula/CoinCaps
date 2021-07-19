@@ -4,7 +4,7 @@ import TableHeaders from './TableHeaders';
 import TableInfo from './TableInfo';
 import './Table.css';
 
-const CryptoTable = ({ filteredCryptos }) => {
+const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
 	const [active, setActive] = useState('');
 
 	const toggle = (i) => {
@@ -26,9 +26,15 @@ const CryptoTable = ({ filteredCryptos }) => {
 								key={crypto.id}
 								crypto={crypto}
 								active={active}
+								activeCurrency={activeCurrency}
 								setActive={() => toggle(crypto.id)}
 							/>
-							<TableInfo key={`${crypto.id}_info`} crypto={crypto} active={active} />
+							<TableInfo
+								key={`${crypto.id}_info`}
+								crypto={crypto}
+								active={active}
+								activeCurrency={activeCurrency}
+							/>
 						</Fragment>
 					))}
 				</tbody>

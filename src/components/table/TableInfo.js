@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Chart from './Chart';
+import { formatPrice } from '../../utils/FormatValues';
 let dateFormat = require('dateformat');
 
-const TableInfo = ({ crypto, active }) => {
+const TableInfo = ({ crypto, active, activeCurrency }) => {
 	const [xPrices, setXPrices] = useState([]);
 	const [yPrices, setYPrices] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -14,6 +15,7 @@ const TableInfo = ({ crypto, active }) => {
 
 	useEffect(() => {
 		isActive() && getCryptoData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [active]);
 
 	const getCryptoData = async () => {
@@ -39,15 +41,21 @@ const TableInfo = ({ crypto, active }) => {
 
 			<td colSpan={1}>
 				<p className="info-header">High 24h</p>
-				<p className="info-value">{`$${parseInt(crypto.high_24h).toLocaleString()}`}</p>
+				<p className="info-value">
+					{formatPrice(crypto.high_24h, activeCurrency.locale, activeCurrency.currency)}
+				</p>
 			</td>
 			<td colSpan={1}>
 				<p className="info-header">Low 24h</p>
-				<p className="info-value">{`$${parseInt(crypto.low_24h).toLocaleString()}`}</p>
+				<p className="info-value">
+					{formatPrice(crypto.low_24h, activeCurrency.locale, activeCurrency.currency)}
+				</p>
 			</td>
 			<td colSpan={1}>
 				<p className="info-header">All Time High</p>
-				<p className="info-value">{`$${parseInt(crypto.ath).toLocaleString()}`}</p>
+				<p className="info-value">
+					{formatPrice(crypto.ath, activeCurrency.locale, activeCurrency.currency)}
+				</p>
 			</td>
 
 			<td colSpan={1}>
