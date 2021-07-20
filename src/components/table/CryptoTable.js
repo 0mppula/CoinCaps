@@ -19,7 +19,6 @@ const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
 				<TableHeaders key={Math.random * 10} />
 				<tbody>
 					<tr className="table-margin-top"></tr>
-
 					{filteredCryptos.map((crypto) => (
 						<Fragment key={`${crypto.id}_id`}>
 							<TableItem
