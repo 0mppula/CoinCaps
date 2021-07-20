@@ -34,6 +34,7 @@ const SearchBar = ({ cryptos, setFileredCryptos }) => {
 	return (
 		<div className="search-bar">
 			<input
+				tabIndex={0}
 				ref={inputRef}
 				type="text"
 				onChange={handleInputChange}

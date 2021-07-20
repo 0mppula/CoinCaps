@@ -16,7 +16,7 @@ const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
 	return (
 		<div className="crypto-table">
 			<table>
-				<TableHeaders key={Math.random * 10} />
+				<TableHeaders />
 				<tbody>
 					<tr className="table-margin-top"></tr>
 					{filteredCryptos.map((crypto) => (

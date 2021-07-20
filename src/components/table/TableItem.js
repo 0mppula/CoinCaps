@@ -26,19 +26,15 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 			</td>
 			<td>{crypto.symbol.toUpperCase()}</td>
 			<td>{crypto.name}</td>
-			<td>
-				{formatPrice(crypto.market_cap, activeCurrency.locale, activeCurrency.currency)}
-			</td>
-			<td>
-				{formatPrice(crypto.current_price, activeCurrency.locale, activeCurrency.currency)}
-			</td>
+			<td>{formatPrice(crypto.market_cap, activeCurrency.locale, activeCurrency.code)}</td>
+			<td>{formatPrice(crypto.current_price, activeCurrency.locale, activeCurrency.code)}</td>
 			<td className={getPriceChangeClass(crypto.price_change_percentage_24h_in_currency)}>
 				{formatPercent(crypto.price_change_percentage_24h_in_currency)}
 			</td>
 			<td className={getPriceChangeClass(crypto.price_change_percentage_7d_in_currency)}>
 				{formatPercent(crypto.price_change_percentage_7d_in_currency)}
 			</td>
-			<td className="drop-info-icon">
+			<td tabIndex={0} onKeyPress={() => handleClick(crypto.id)} className="drop-info-icon">
 				<FontAwesomeIcon
 					icon={faChevronUp}
 					className={`icon ${active === crypto.id ? 'hide-info' : 'show-info'}`}

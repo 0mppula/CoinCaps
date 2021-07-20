@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import CurrencyList from './CurrencyList';
+import React from 'react';
+import CurrencyToggler from './CurrencyToggler';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSortDown } from '@fortawesome/free-solid-svg-icons';
-import usdSymbol from '../../images/currencies/usd.svg';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logo/logo.png';
 
 const Nav = ({ activeCurrency, setActiveCurrency }) => {
-	const [listOpen, setListOpen] = useState(false);
-
-	const toggleList = () => setListOpen(!listOpen);
-
 	return (
 		<nav className="navbar">
 			<div className="nav-info">
@@ -21,20 +17,13 @@ const Nav = ({ activeCurrency, setActiveCurrency }) => {
 				</a>
 			</div>
 			<div className="controls">
-				<div className="currency-toggler" onClick={toggleList}>
-					{/* FIX MEE */}
-					<img src={usdSymbol} alt="$" />
-					<p className="currency-text">{activeCurrency.currency}</p>
-					<FontAwesomeIcon className="icon sort" icon={faSortDown} />
-				</div>
-				<div className="icon-wrapper">
-					<FontAwesomeIcon className="icon moon m-6" icon={faMoon} />
-				</div>
-				<CurrencyList
-					listOpen={listOpen}
-					setListOpen={setListOpen}
+				<CurrencyToggler
+					activeCurrency={activeCurrency}
 					setActiveCurrency={setActiveCurrency}
 				/>
+				<div tabIndex={0} className="icon-wrapper">
+					<FontAwesomeIcon className="icon moon m-6" icon={faMoon} />
+				</div>
 			</div>
 		</nav>
 	);

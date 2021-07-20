@@ -49,12 +49,12 @@ th.price-change {
 	width: 70px;
 }
 th.symbol {
+	width: 14%;
+}
+th.name {
 	width: 15%;
 }
 th.price {
-	width: 16%;
-}
-th.name {
 	width: 16%;
 }
 th.info {

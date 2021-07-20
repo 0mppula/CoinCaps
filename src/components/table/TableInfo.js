@@ -21,7 +21,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 
 	const getCryptoData = async () => {
 		setLoading(true);
-		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=${activeCurrency.currency}&days=30&interval=daily`;
+		const url = `https://api.coingecko.com/api/v3/coins/${active}/market_chart?vs_currency=${activeCurrency.code}&days=30&interval=daily`;
 		const response = await fetch(url);
 		const { prices: priceData } = await response.json();
 		const yMonthly = priceData.map((price) => price[1]);
@@ -43,19 +43,19 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 			<td colSpan={1}>
 				<p className="info-header">High 24h</p>
 				<p className="info-value">
-					{formatPrice(crypto.high_24h, activeCurrency.locale, activeCurrency.currency)}
+					{formatPrice(crypto.high_24h, activeCurrency.locale, activeCurrency.code)}
 				</p>
 			</td>
 			<td colSpan={1}>
 				<p className="info-header">Low 24h</p>
 				<p className="info-value">
-					{formatPrice(crypto.low_24h, activeCurrency.locale, activeCurrency.currency)}
+					{formatPrice(crypto.low_24h, activeCurrency.locale, activeCurrency.code)}
 				</p>
 			</td>
 			<td colSpan={1}>
 				<p className="info-header">All Time High</p>
 				<p className="info-value">
-					{formatPrice(crypto.ath, activeCurrency.locale, activeCurrency.currency)}
+					{formatPrice(crypto.ath, activeCurrency.locale, activeCurrency.code)}
 				</p>
 			</td>
 
@@ -71,7 +71,11 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 					<>
 						<p className="info-header">Price 30d</p>
 						<div className="chart-wrapper">
-							<Chart xPrices={xPrices} yPrices={yPrices} />
+							{xPrices.length > 3 ? (
+								<Chart xPrices={xPrices} yPrices={yPrices} />
+							) : (
+								<p className="info-value">No data... 📈</p>
+							)}
 						</div>
 					</>
 				)}
@@ -100,9 +104,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 						<p>{'\u00A0'}</p>
 					</div>
 					<div>
-						<p>
-							<canvas className="chart-hidden"></canvas>
-						</p>
+						<p>{'\u00A0'}</p>
 					</div>
 				</div>
 			</td>

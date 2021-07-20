@@ -95,12 +95,14 @@
 	position: absolute;
 	top: 43px;
 	left: 8px;
-	width: 85px;
+	width: 120px;
 	background-color: var(--clr-background-primary);
 	color: var(--clr-text-primary);
 	padding: 0.15rem;
 	transition: 0.2s ease;
 	border-radius: 2px;
+	border: solid 2px var(--clr-primary);
+	border-top: none;
 	pointer-events: none;
 }
 

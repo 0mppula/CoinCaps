@@ -1,31 +1,46 @@
-import React from 'react';
-import euroSymbol from '../../images/currencies/euro.svg';
-import usdSymbol from '../../images/currencies/usd.svg';
-import yenSymbol from '../../images/currencies/yen.svg';
-import btcSymbol from '../../images/currencies/btc.png';
-import ethSymbol from '../../images/currencies/ethereum.png';
+import React, { useEffect, useRef } from 'react';
 
-const CurrencyList = ({ listOpen, setListOpen, setActiveCurrency }) => {
-	const currencies = [
-		{ name: 'usd', symbol: '$', locale: 'en-US', img: euroSymbol },
-		{ name: 'eur', symbol: '€', locale: 'fi-FI', img: usdSymbol },
-		{ name: 'jpy', symbol: '¥', locale: 'ja-JP', img: yenSymbol },
-	];
+const CurrencyList = ({
+	listOpen,
+	handleSelect,
+	toggleList,
+	setListOpen,
+	activeCurrency,
+	currencies,
+}) => {
+	useEffect(() => {
+		let handler = (e) => {
+			if (!listRef.current.contains(e.target) && listOpen) {
+				setListOpen(false);
+			}
+		};
 
-	const handleClick = (currency) => {
-		setActiveCurrency({ currency: currency.name, locale: currency.locale });
-		setListOpen(!listOpen);
-	};
+		document.addEventListener('click', handler);
+
+		return () => {
+			document.removeEventListener('click', handler);
+		};
+	});
+
+	const listRef = useRef();
 
 	return (
-		<div className={`currency-list ${listOpen ? '' : 'show'}`}>
+		<div ref={listRef} className={`currency-list ${listOpen ? 'show' : ''}`}>
 			<ul>
-				{currencies.map((currency, i) => (
-					<li key={i} className="currency-item" onClick={() => handleClick(currency)}>
-						<img src={currency.img} alt={currency.symbol} />
-						{currency.name}
-					</li>
-				))}
+				{currencies
+					.filter((currency) => currency.code !== activeCurrency.code)
+					.map((currency, i) => (
+						<li
+							tabIndex={listOpen ? 0 : -1}
+							key={i}
+							className="currency-item"
+							onClick={() => handleSelect(currency)}
+							onKeyPress={() => handleSelect(currency)}
+						>
+							<img src={currency.img} alt={currency.symbol} />
+							{currency.name}
+						</li>
+					))}
 			</ul>
 		</div>
 	);
