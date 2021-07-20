@@ -48,11 +48,15 @@ th.img {
 th.price-change {
 	width: 70px;
 }
-
-th.price {
-	width: 18%;
+th.symbol {
+	width: 15%;
 }
-
+th.price {
+	width: 16%;
+}
+th.name {
+	width: 16%;
+}
 th.info {
 	width: 3%;
 }
