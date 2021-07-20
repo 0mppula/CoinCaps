@@ -65,16 +65,6 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 			</td>
 
 			<td colSpan={2}>
-				{/* {loading && <Loader />}
-				{!loading && (
-					<>
-						<p className="info-header">Price 30d</p>
-						<div className="chart-wrapper">
-							<Chart xPrices={xPrices} yPrices={yPrices} />
-						</div>
-					</>
-				)} */}
-
 				{loading ? (
 					<Loader />
 				) : (
