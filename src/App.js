@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SearchBar from './components/controls/SearchBar';
+import SearchBar from './components/search/SearchBar';
 import CryptoTable from './components/table/CryptoTable';
 import Nav from './components/nav/Nav';
 import LoaderLarge from './components/loaders/LoaderLarge';
@@ -13,6 +13,7 @@ function App() {
 		code: 'usd',
 		locale: 'en-US',
 	});
+	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')));
 
 	useEffect(() => {
 		const getCryptoData = async () => {
@@ -31,12 +32,21 @@ function App() {
 
 	return (
 		<div className="container">
-			<Nav activeCurrency={activeCurrency} setActiveCurrency={setActiveCurrency} />
+			<Nav
+				activeCurrency={activeCurrency}
+				setActiveCurrency={setActiveCurrency}
+				darkMode={darkMode}
+				setDarkMode={setDarkMode}
+			/>
 			<SearchBar cryptos={cryptos} setFileredCryptos={setFileredCryptos} />
 			{loading ? (
-				<LoaderLarge />
+				<LoaderLarge darkMode={darkMode} />
 			) : (
-				<CryptoTable filteredCryptos={filteredCryptos} activeCurrency={activeCurrency} />
+				<CryptoTable
+					filteredCryptos={filteredCryptos}
+					activeCurrency={activeCurrency}
+					darkMode={darkMode}
+				/>
 			)}
 		</div>
 	);

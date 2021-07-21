@@ -154,8 +154,9 @@ th.info {
 }
 
 .chart {
-	background-color: var(--clr-background-primary);
-	border: solid 1px var(--clr-black-opacity-high);
+	background-color: var(--clr-background-tertiary);
+	border: solid 1px var(--clr-primary-opacity-low);
+	border-radius: 2px;
 	transition: var(--transition-time);
 }
 
@@ -177,7 +178,7 @@ th.info {
 	transition: 1.8s linear;
 	transition: 0.18s;
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
-	background-color: var(--clr-primary-opacity-high);
+	background-color: var(--clr-primary-opacity-low);
 	z-index: 10;
 }
 
@@ -189,7 +190,7 @@ th.info {
 	width: 100%;
 	transition: var(--transition-time);
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
-	background-color: var(--clr-primary-opacity-high);
+	background-color: var(--clr-primary-opacity-low);
 	z-index: 10;
 }
 

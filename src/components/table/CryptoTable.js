@@ -3,7 +3,7 @@ import TableItem from './TableItem';
 import TableHeaders from './TableHeaders';
 import TableInfo from './TableInfo';
 
-const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
+const CryptoTable = ({ filteredCryptos, activeCurrency, darkMode }) => {
 	const [active, setActive] = useState('');
 
 	const toggle = (i) => {
@@ -33,6 +33,7 @@ const CryptoTable = ({ filteredCryptos, activeCurrency }) => {
 								crypto={crypto}
 								active={active}
 								activeCurrency={activeCurrency}
+								darkMode={darkMode}
 							/>
 						</Fragment>
 					))}

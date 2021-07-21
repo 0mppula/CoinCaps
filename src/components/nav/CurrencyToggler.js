@@ -17,7 +17,7 @@ const currencies = [
 	{ name: 'dollar', code: 'usd', symbol: '$', locale: 'en-US', img: usdSymbol },
 	{ name: 'euro', code: 'eur', symbol: '€', locale: 'fi-FI', img: eurSymbol },
 	{ name: 'pound ', code: 'gbp', symbol: '£', locale: 'en-US', img: gbpSymbol },
-	{ name: 'yen', code: 'jpy', symbol: '¥', locale: 'ja-JP', img: yenSymbol },
+	{ name: 'yen', code: 'jpy', symbol: '¥', locale: 'en-US', img: yenSymbol },
 	{ name: 'bitcoin', code: 'btc', symbol: '₿', locale: 'en-US', img: btcSymbol },
 	{ name: 'etherium', code: 'eth', symbol: 'Ξ', locale: 'en-US', img: ethSymbol },
 ];

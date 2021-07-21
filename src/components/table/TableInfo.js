@@ -4,7 +4,7 @@ import { formatPrice } from '../../utils/FormatValues';
 import Loader from '../loaders/LoaderSmall';
 let dateFormat = require('dateformat');
 
-const TableInfo = ({ crypto, active, activeCurrency }) => {
+const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 	const [xPrices, setXPrices] = useState([]);
 	const [yPrices, setYPrices] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -66,7 +66,7 @@ const TableInfo = ({ crypto, active, activeCurrency }) => {
 
 			<td colSpan={2}>
 				{loading ? (
-					<Loader />
+					<Loader darkMode={darkMode} />
 				) : (
 					<>
 						<p className="info-header">Price 30d</p>

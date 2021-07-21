@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from '../../images/logo/logo.png';
+import logo_light from '../../images/logo/logo_light.png';
+import logo_dark from '../../images/logo/logo_dark.png';
 
-const Loader = () => {
+const Loader = ({ darkMode }) => {
 	return (
 		<div className="chart-loader-wrapper-small">
-			<img src={logo} alt="Loading..." />
+			<img src={darkMode === true ? logo_dark : logo_light} alt="Loading..." />
 			<p className="loading">Loading...</p>
 		</div>
 	);
