@@ -19,8 +19,8 @@ export const formatPrice = (value, locale, code) => {
 				currency: code,
 			})
 				.format(value)
-				.replace(/(\.|,| )\d+\s+€$/g, ' €')
-				.replace(/(\.|,)\d+$/g, '');
+				.replace(/(\.|,)\d+\s+€$/g, ' €')
+				.replace(/(\.|,)\d{2}$/g, '');
 		}
 		return price;
 	} else {
