@@ -7,12 +7,14 @@
 // Nav:
 - Style nav ✔
 - Name the project Coin Caps and add a place holder logo. ✔
+- Add dark mode.
 
 // CurrencyList:
 - Update selector icon when currency is selected. ✔
 - Close CurrencyList on click out of div. ✔
 - Add prices for bitcoin and etherium. ✔
-- Fix EU price parsing (remove ,00). ✔
+- Fix EU price parsing (remove ,00). 
+- Add new icon for Yen and Pound Sterling.
 
 // Search:
 - Style search ✔
