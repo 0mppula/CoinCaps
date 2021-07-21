@@ -1,8 +1,7 @@
 import React from 'react';
 import CurrencyToggler from './CurrencyToggler';
+import DarkToggler from './DarkToggler';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logo/logo.png';
 
 const Nav = ({ activeCurrency, setActiveCurrency }) => {
@@ -21,9 +20,7 @@ const Nav = ({ activeCurrency, setActiveCurrency }) => {
 					activeCurrency={activeCurrency}
 					setActiveCurrency={setActiveCurrency}
 				/>
-				<div tabIndex={0} className="icon-wrapper">
-					<FontAwesomeIcon className="icon moon m-6" icon={faMoon} />
-				</div>
+				<DarkToggler />
 			</div>
 		</nav>
 	);

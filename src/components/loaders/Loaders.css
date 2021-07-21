@@ -45,6 +45,10 @@
 	height: 135px;
 	animation: spin 2s linear infinite;
 }
+
+.loading {
+	color: var(--clr-text-primary);
+}
 /* End Large */
 
 /* Keyframes */

@@ -6,8 +6,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: var(--clr-white);
-	color: var(--clr-black);
+	background: var(--clr-background-secondary);
+	color: var(--clr-text-primary);
 	border-bottom: solid 2px var(--clr-primary);
 	z-index: 100;
 }
@@ -33,7 +33,7 @@
 	margin-top: 0.35rem;
 	margin-left: 0.35rem;
 	user-select: none;
-	color: var(--clr-black);
+	color: var(--clr-text-primary);
 }
 
 .nav-info h1 span {
@@ -48,17 +48,19 @@
 	align-items: center;
 }
 
-.controls .currency-toggler,
+.controls .currency-toggler {
+	border-radius: 4px;
+	margin-right: 0.15rem;
+}
+
 .controls .icon-wrapper {
 	border-radius: 4px;
-	transition: 0.2s ease;
 }
 
 .moon,
 .usd,
 .sort {
 	font-size: 1.1rem;
-	color: var(--clr-black);
 }
 
 .currency-toggler {
@@ -76,7 +78,7 @@
 
 .icon-wrapper:hover,
 .currency-toggler:hover {
-	background: var(--clr-black-opacity-high);
+	background: var(--clr-hover);
 }
 
 .icon-wrapper {
@@ -96,11 +98,11 @@
 	top: 43px;
 	left: 8px;
 	width: 120px;
-	background-color: var(--clr-background-primary);
+	background-color: var(--clr-background-secondary);
 	color: var(--clr-text-primary);
 	padding: 0.15rem;
 	transition: 0.2s ease;
-	border-radius: 2px;
+	border-radius: 0 0 2px 2px;
 	border: solid 2px var(--clr-primary);
 	border-top: none;
 	pointer-events: none;
@@ -123,9 +125,8 @@
 	cursor: pointer;
 	padding: 0.1rem 0.35rem;
 	margin-bottom: 0.1rem;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	border-radius: 2px;
-
 	user-select: none;
 }
 
@@ -135,6 +136,6 @@
 }
 
 .currency-item:hover {
-	background: var(--clr-black-opacity-high);
+	background: var(--clr-hover);
 }
 /* End Currency list */

@@ -5,11 +5,11 @@
 .crypto-table {
 	width: 100%;
 	padding: 1rem 1rem 0.75rem;
-	border: solid 2px var(--clr-black-opacity-high);
 	color: var(--clr-text-primary);
-	background-color: var(--clr-background-primary);
+	background-color: var(--clr-background-secondary);
 	border-radius: 4px;
 	margin-bottom: 3rem;
+	border: solid 2px var(--clr-primary-opacity-low);
 	overflow-x: auto;
 	overflow-y: hidden;
 }
@@ -23,15 +23,20 @@ table {
 
 .crypto-table thead {
 	font-size: 1.2rem;
-	border-bottom: 2px solid;
+	border-bottom: 2px solid var(--clr-primary-opacity-low);
 }
 
 .table-headers {
 	font-size: 1.5rem;
+	user-select: none;
+}
+
+.table-headers th::first-letter {
+	color: var(--clr-primary);
 }
 
 .thead-margin-bottom {
-	height: 1rem;
+	height: 0.75rem;
 }
 
 .table-margin-top {
@@ -76,6 +81,11 @@ th.info {
 	top: -0.15rem;
 	right: 0.25rem;
 	font-size: 1.5rem;
+}
+
+.icon.show-info,
+.icon.hide-info {
+	transition: 00.2s ease;
 }
 
 .show-info:hover,
@@ -167,7 +177,7 @@ th.info {
 	transition: 1.8s linear;
 	transition: 0.18s;
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
-	background-color: var(--clr-black-opacity-high);
+	background-color: var(--clr-primary-opacity-high);
 	z-index: 10;
 }
 
@@ -179,7 +189,7 @@ th.info {
 	width: 100%;
 	transition: var(--transition-time);
 	height: calc(1rem / 32) !important; /* fixes <1px borders */
-	background-color: var(--clr-black-opacity-high);
+	background-color: var(--clr-primary-opacity-high);
 	z-index: 10;
 }
 
