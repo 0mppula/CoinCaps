@@ -1,4 +1,4 @@
-# Project X (place holder name)
+# Coin Caps
 
 ### This is the Conclusive Project for the Web Development Course at the Prestigious [Jyväskylä University of Applied Sciences][1].
 
