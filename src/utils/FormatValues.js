@@ -35,3 +35,11 @@ export const formatPercent = (number) => {
 		return 'No data...';
 	}
 };
+
+export const usdConfig = {
+	name: 'dollar',
+	code: 'usd',
+	locale: 'en-US',
+	img: '/static/media/usd.bba48499.svg',
+	symbol: '$',
+};
