@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CurrencyList from './CurrencyList';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,13 +24,15 @@ const currencies = [
 
 const CurrencyToggler = ({ activeCurrency, setActiveCurrency }) => {
 	const [listOpen, setListOpen] = useState(false);
-	const [activeImg, setActiveImg] = useState({ img: usdSymbol, symbol: '$' });
+
+	useEffect(() => {
+		localStorage.setItem('activeCurrency', JSON.stringify(activeCurrency));
+	}, [activeCurrency]);
 
 	const toggleList = () => setListOpen(!listOpen);
 
 	const handleSelect = (currency) => {
-		setActiveCurrency({ code: currency.code, name: currency.name, locale: currency.locale });
-		setActiveImg({ img: currency.img, symbol: currency.symbol });
+		setActiveCurrency(currency);
 		toggleList();
 	};
 
@@ -42,7 +44,7 @@ const CurrencyToggler = ({ activeCurrency, setActiveCurrency }) => {
 				onKeyPress={toggleList}
 				onClick={toggleList}
 			>
-				<img src={activeImg.img} alt={activeImg.symbol} />
+				<img src={activeCurrency.img} alt={activeCurrency.symbol} />
 				<p className="currency-text">{activeCurrency.code}</p>
 				<FontAwesomeIcon className="icon sort" icon={faSortDown} />
 			</div>

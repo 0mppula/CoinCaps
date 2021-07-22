@@ -72,7 +72,7 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 						<p className="info-header">Price 30d</p>
 						<div className="chart-wrapper">
 							{xPrices.length > 3 ? (
-								<Chart xPrices={xPrices} yPrices={yPrices} />
+								<Chart xPrices={xPrices} yPrices={yPrices} darkMode={darkMode} />
 							) : (
 								<p className="info-value">No data... 📈</p>
 							)}

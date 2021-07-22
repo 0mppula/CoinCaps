@@ -8,6 +8,11 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 		setActive(id);
 	};
 
+	const isActive = () => {
+		let value = crypto.id === active;
+		return value;
+	};
+
 	const getPriceChangeClass = (change) => {
 		if (change > 0) {
 			return 'success';
@@ -19,7 +24,7 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 	};
 
 	return (
-		<tr className="table-item">
+		<tr className={isActive() ? 'table-item active' : 'table-item'}>
 			<td>{crypto.market_cap_rank}</td>
 			<td>
 				<img src={crypto.image} alt={`${crypto.name} icon`} />
@@ -37,14 +42,12 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 			<td tabIndex={0} onKeyPress={() => handleClick(crypto.id)} className="drop-info-icon">
 				<FontAwesomeIcon
 					icon={faChevronUp}
-					className={`icon ${active === crypto.id ? 'hide-info' : 'show-info'}`}
+					className={`icon ${isActive() ? 'hide-info' : 'show-info'}`}
 					onClick={() => handleClick(crypto.id)}
 				/>
 			</td>
 
-			<td
-				className={`${active === crypto.id ? 'border-bottom active' : 'border-bottom '}`}
-			></td>
+			<td className={`${isActive() ? 'border-bottom active' : 'border-bottom '}`}></td>
 		</tr>
 	);
 };

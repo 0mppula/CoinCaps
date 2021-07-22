@@ -1,12 +1,12 @@
 .navbar {
 	position: fixed;
 	top: 0;
-	width: 100vw;
+	width: 100%;
 	height: var(--nav-heigth);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: var(--clr-background-secondary);
+	background: var(--clr-background-L1);
 	color: var(--clr-text-primary);
 	border-bottom: solid 2px var(--clr-primary);
 	z-index: 100;
@@ -98,7 +98,7 @@
 	top: 43px;
 	left: 8px;
 	width: 120px;
-	background-color: var(--clr-background-secondary);
+	background-color: var(--clr-background-L1);
 	color: var(--clr-text-primary);
 	padding: 0.15rem;
 	transition: 0.2s ease;

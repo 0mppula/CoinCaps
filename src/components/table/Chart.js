@@ -1,12 +1,14 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-const chart = ({ xPrices, yPrices }) => {
+const chart = ({ xPrices, yPrices, darkMode }) => {
 	const getColor = () => {
 		let firstPrice = yPrices[0];
 		let currePrice = yPrices[yPrices.length - 1];
+		let danger = darkMode ? '#f96767' : '#ab141c';
+		let success = darkMode ? '#12cc2f' : '#096a19';
 
-		let color = firstPrice < currePrice ? '#00b239' : '#ff1e19';
+		let color = firstPrice < currePrice ? success : danger;
 		return color;
 	};
 
@@ -15,8 +17,9 @@ const chart = ({ xPrices, yPrices }) => {
 		datasets: [
 			{
 				data: yPrices,
-				fill: false,
+				fill: true,
 				borderColor: getColor(),
+				backgroundColor: getColor(),
 			},
 		],
 	};

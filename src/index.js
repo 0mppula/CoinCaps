@@ -5,6 +5,7 @@ import './components/loaders/Loaders.css';
 import './components/table/Table.css';
 import './components/search/SearchBar.css';
 import './components/nav/Nav.css';
+import './components/footer/Footer.css';
 
 import App from './App';
 

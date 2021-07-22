@@ -6,7 +6,7 @@
 	width: 100%;
 	padding: 1rem 1rem 0.75rem;
 	color: var(--clr-text-primary);
-	background-color: var(--clr-background-secondary);
+	background-color: var(--clr-background-L1);
 	border-radius: 4px;
 	margin-bottom: 3rem;
 	border: solid 2px var(--clr-primary-opacity-low);
@@ -40,7 +40,7 @@ table {
 }
 
 .table-margin-top {
-	height: 0.4rem;
+	height: 0.2rem;
 }
 
 /* Headers */
@@ -68,14 +68,31 @@ th.info {
 
 /* End Headers */
 
+/* FIX MEE */
 .table-item {
 	height: 55px;
 	position: relative;
+	border-bottom: 0.25rem solid transparent;
+	border-top: 0.25rem solid transparent;
+	transition: 0.2s ease;
+}
+
+.table-item.active {
+	background: var(--clr-background-L2);
+	border-bottom: 0.25rem solid var(--clr-background-L2);
+	border-top: 0.25rem solid var(--clr-background-L2);
+}
+
+.table-item:hover {
+	background: var(--clr-background-L2);
+	border-bottom: 0.25rem solid var(--clr-background-L2);
+	border-top: 0.25rem solid var(--clr-background-L2);
 }
 
 .crypto-table tbody tr {
-	border-bottom: 0.5rem solid transparent;
+	/* border-top: 0.5rem solid rgba(255, 255, 255, 0.25); */
 }
+/* FIX MEE */
 
 .drop-info-icon {
 	top: -0.15rem;
@@ -119,6 +136,7 @@ th.info {
 .show {
 	opacity: 1;
 	line-height: 2;
+	background: var(--clr-background-L2);
 }
 
 .info-container {
@@ -154,8 +172,8 @@ th.info {
 }
 
 .chart {
-	background-color: var(--clr-background-tertiary);
-	border: solid 1px var(--clr-primary-opacity-low);
+	background-color: var(--clr-background-L3);
+	/* border: solid 1px var(--clr-primary-opacity-low); */
 	border-radius: 2px;
 	transition: var(--transition-time);
 }
@@ -173,7 +191,7 @@ th.info {
 	position: absolute;
 	left: 0;
 	opacity: 1 !important;
-	bottom: -12px;
+	bottom: -6px;
 	width: 100%;
 	transition: 1.8s linear;
 	transition: 0.18s;
@@ -186,7 +204,7 @@ th.info {
 	position: absolute;
 	left: 0;
 	opacity: 1 !important;
-	bottom: -124px;
+	bottom: -126px;
 	width: 100%;
 	transition: var(--transition-time);
 	height: calc(1rem / 32) !important; /* fixes <1px borders */

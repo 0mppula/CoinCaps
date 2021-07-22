@@ -3,9 +3,10 @@
 
 :root {
 	/* Background */
-	--clr-background-primary: #fafafa;
-	--clr-background-secondary: #f9f9f9;
-	--clr-background-tertiary: #f5f5f5;
+	--clr-background-L0: #ffffff; /* Body */
+	--clr-background-L1: #fbfbfb; /* Nav, Search(inactive), Table,  Footer,  */
+	--clr-background-L2: #f5f8fb; /* Hover table item */
+	--clr-background-L3: #f0f3fb; /* Chart */
 	--clr-base: #855db5;
 	/* Text */
 	--clr-text-primary: #1b1b1b;
@@ -27,9 +28,10 @@
 
 .darkmode {
 	/* Background */
-	--clr-background-primary: #1b181f;
-	--clr-background-secondary: #242128;
-	--clr-background-tertiary: #2b282f;
+	--clr-background-L0: #1b181f; /* Body */
+	--clr-background-L1: #242128; /* Nav, Search(inactive), Table,  Footer,  */
+	--clr-background-L2: #2b282f; /* Hover table item */
+	--clr-background-L3: #322f36; /* Chart */
 	/* Text */
 	--clr-text-primary: #fafafa;
 	--clr-text-secondary: #fafafa;
@@ -60,7 +62,8 @@ html {
 }
 
 body {
-	background: var(--clr-background-primary);
+	background: var(--clr-background-L0);
+	overflow-x: hidden;
 }
 
 .container {

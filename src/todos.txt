@@ -15,7 +15,7 @@
 - Add prices for bitcoin and etherium. ✔
 - Fix EU price parsing (remove ,00). ✔
 - Add new icon for Yen and Pound Sterling. ✔
-- Save selected currency for next time.
+- Save selected currency for next time. ✔
 
 // Search:
 - Style search ✔
@@ -29,6 +29,7 @@
 - Segregate headers from list add (border bottom). ✔
 - Add loader to crypto list. ✔
 - Add tabindexes. ✔
+- Add hover/selected highlight to crypto items. 👷‍♂️
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -36,14 +37,18 @@
 - Add drop down functionality to cryptoitem. ✔
 - Populate crypto item (dropdown) with data [volume, ath, ath, date, 30d prices, 30d price action chart]. ✔
 - Switch to column setup add header to chart. ✔
+- Add colors to chart and fill. ✔
 
 // Loader
 - Create small spinning loader for chart load. ✔
+
+// Back to top
+- Create back to top botton element when past certain amount of pixels. 👷‍♂️
 
 // Utlis
 - Migrate all formatting functions to utils subdirectory. ✔
 - Import functions where needed. ✔
 - Refactor all formatting functions for future currency changes. ✔
 
-// Create Footer.
+// Create Footer. 👷‍♂️
 
