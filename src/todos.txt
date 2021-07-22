@@ -29,7 +29,7 @@
 - Segregate headers from list add (border bottom). ✔
 - Add loader to crypto list. ✔
 - Add tabindexes. ✔
-- Add hover/selected highlight to crypto items. 👷‍♂️
+- Add hover/selected highlight to crypto items. ✔
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -50,5 +50,6 @@
 - Import functions where needed. ✔
 - Refactor all formatting functions for future currency changes. ✔
 
-// Create Footer. 👷‍♂️
+// Create Footer️ ✔
+- Add a dynamically updating copyright date. 👷‍♂️
 
