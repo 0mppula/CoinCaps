@@ -36,6 +36,24 @@ export const formatPercent = (number) => {
 	}
 };
 
+export const formatDate = (date) => {
+	let formattedDate = 'No Date available...';
+
+	let dateObj = new Date(date);
+	if (dateObj.getMonth && typeof dateObj.getMonth === 'function') {
+		let yyyy = dateObj.getFullYear();
+		let mm = dateObj.getMonth() + 1;
+		let dd = dateObj.getDate();
+		/* Zero padd dates */
+		if (mm < 10) mm = `0${mm}`;
+		if (dd < 10) dd = `0${dd}`;
+
+		formattedDate = [dd, mm, yyyy].join('/') || 'No date available';
+	}
+
+	return formattedDate;
+};
+
 export const usdConfig = {
 	name: 'dollar',
 	code: 'usd',
