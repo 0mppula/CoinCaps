@@ -1,8 +1,20 @@
 .search-bar {
 	display: flex;
-	margin: 2rem 0;
+	margin: 6rem 0 3rem;
 	width: 55%;
 	position: relative;
+}
+
+::placeholder {
+	color: var(--clr-text-secondary);
+}
+
+:-ms-input-placeholder {
+	color: red;
+}
+
+::-ms-input-placeholder {
+	color: red;
 }
 
 .search-bar [type='text'] {
@@ -12,7 +24,6 @@
 	background: var(--clr-background-L1);
 	padding: 0.25rem 0.5rem;
 	border: 1px solid var(--clr-primary-opacity-low);
-	/* border: 1px solid rgb(118, 118, 118); */
 	font-size: 1.1rem;
 	border-radius: 4px;
 	outline: none;

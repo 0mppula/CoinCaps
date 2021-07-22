@@ -10,10 +10,11 @@
 	--clr-base: #855db5;
 	/* Text */
 	--clr-text-primary: #1b1b1b;
-	--clr-text-secondary: #1b1b1b50;
+	--clr-text-secondary: #5f5f5f;
 	/* Primary Colors */
 	--clr-primary: #68498d;
 	--clr-primary-opacity-low: #68498d99;
+	--clr-primary-opacity-high: #68498dcc;
 	/* White and Hover */
 	--clr-white: #fafafa;
 	--clr-hover: #f0f0f0;
@@ -34,10 +35,12 @@
 	--clr-background-L3: #322f36; /* Chart */
 	/* Text */
 	--clr-text-primary: #fafafa;
-	--clr-text-secondary: #fafafa;
+	--clr-text-secondary: #aeaeae;
 	--clr-hover: #353535;
-	/* Primary */
+	/* Primary Colors */
 	--clr-primary: #b69ed3;
+	--clr-primary-opacity-low: #b69ed399;
+	--clr-primary-opacity-high: #b69ed3bb;
 	/* Opacity */
 	--clr-primary-opacity-low: #b69ed366;
 	/* Success and Danger */

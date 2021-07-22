@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import Chart from './Chart';
-import { formatPrice } from '../../utils/FormatValues';
 import Loader from '../loaders/LoaderSmall';
-let dateFormat = require('dateformat');
+
+import { formatPrice } from '../../utils/FormatValues';
+import { formatDate } from '../../utils/FormatValues';
 
 const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 	const [xPrices, setXPrices] = useState([]);
@@ -61,7 +63,8 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 
 			<td colSpan={1}>
 				<p className="info-header">ATH Date</p>
-				<p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p>
+				{/* <p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p> */}
+				<p className="info-value">{formatDate(crypto.ath_date)}</p>
 			</td>
 
 			<td colSpan={2}>
