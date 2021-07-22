@@ -27,6 +27,7 @@
 .nav-info img {
 	height: 34px;
 	cursor: pointer;
+	user-select: none;
 }
 
 .nav-info h1 {
