@@ -21,6 +21,8 @@
 // Search:
 - Style search ✔
 - Remove query from input when ESC is pressed or ❌ is clicked  ✔
+- Create a search container with global crypto data. ✔
+- Add global marketcap and active cryptos. ✔
 
 // CryptoList:
 - Style cryptolist ✔
@@ -44,7 +46,7 @@
 - Create small spinning loader for chart load. ✔
 
 // Back to top
-- Create back to top botton element when past certain amount of pixels. 👷‍♂️3️⃣
+- Create back to top botton element when past certain amount of pixels. ✔
 
 // Utlis
 - Migrate all formatting functions to utils subdirectory. ✔
