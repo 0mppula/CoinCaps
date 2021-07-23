@@ -16,6 +16,7 @@
 - Fix EU price parsing (remove ,00). ✔
 - Add new icon for Yen and Pound Sterling. ✔
 - Save selected currency for next time. ✔
+- Fix currency logo bug (not appearing for first time users). ✔
 
 // Search:
 - Style search ✔
@@ -43,7 +44,7 @@
 - Create small spinning loader for chart load. ✔
 
 // Back to top
-- Create back to top botton element when past certain amount of pixels. 👷‍♂️
+- Create back to top botton element when past certain amount of pixels. 👷‍♂️3️⃣
 
 // Utlis
 - Migrate all formatting functions to utils subdirectory. ✔
@@ -51,5 +52,6 @@
 - Refactor all formatting functions for future currency changes. ✔
 
 // Create Footer️ ✔
-- Add a dynamically updating copyright date. 👷‍♂️
+- Add a dynamically updating copyright date. ✔
+- Add resources to footer. ✔
 
