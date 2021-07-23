@@ -5,6 +5,7 @@ import SearchBar from './components/search/SearchBar';
 import CryptoTable from './components/table/CryptoTable';
 import Footer from './components/footer/Footer';
 import LoaderLarge from './components/loaders/LoaderLarge';
+import ToTop from './components/tools/ToTop';
 
 import { currencies } from './utils/FormatValues';
 
@@ -34,6 +35,7 @@ function App() {
 
 	return (
 		<>
+			<ToTop />
 			<Nav
 				activeCurrency={activeCurrency}
 				setActiveCurrency={setActiveCurrency}

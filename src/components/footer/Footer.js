@@ -1,11 +1,15 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import Link from './Link';
+import Icon from './Icon';
 
 import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 import logo_dark from '../../images/branding/logo_dark.png';
 import logo_light from '../../images/branding/logo_light.png';
 
 const Footer = ({ darkMode }) => {
+	const [year] = useState(new Date(Date.now()).getFullYear());
+
 	return (
 		<div className="footer">
 			<div className="footer-top">
@@ -20,130 +24,98 @@ const Footer = ({ darkMode }) => {
 							<span>C</span>oin <span>C</span>aps
 						</h2>
 					</div>
-
-					{/* <p>Developed by Omar Kraidié.</p> */}
 				</div>
-				<div className="footer-info-section">
-					<h2>Technologies</h2>
-					<div>
-						<a
-							href="https://www.coingecko.com/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>CoinGecko API</p>
-						</a>
-						<a
-							href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>JavaScript</p>
-						</a>
-						<a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
-							<p>Node.js</p>
-						</a>
-						<a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-							<p>React</p>
-						</a>
-						<a
-							href="https://www.chartjs.org/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>Chart.js</p>
-						</a>
-						<a
-							href="https://fontawesome.com/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>Font Awesome</p>
-						</a>
+				<div className="footer-links-container">
+					<div className="footer-link-section">
+						<div className="link-header">
+							<h2>Technologies</h2>
+						</div>
+						<div>
+							<Link
+								url={'https://developer.mozilla.org/en-US/docs/Web/JavaScript'}
+								text={'JavaScript'}
+							/>
+							<Link url={'https://nodejs.org/'} text={'Node.js'} />
+							<Link url={'https://reactjs.org/'} text={'React'} />
+							<Link
+								url={'https://developer.mozilla.org/en-US/docs/Web/CSS'}
+								text={'CSS'}
+							/>
+							<Link
+								url={'https://developer.mozilla.org/en-US/docs/Web/HTML'}
+								text={'HTML'}
+							/>
+						</div>
 					</div>
-				</div>
-				<div className="footer-info-section">
-					<h2>Developer</h2>
-					<div>
-						<a
-							href="https://github.com/0mppula/Coin_Caps"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>GitHub Repository</p>
-						</a>
-						<a
-							href="https://omars-portfolio.netlify.app/projects.html"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>Projects Portfolio</p>
-						</a>
-						<a
-							href="https://csgo-weapons.netlify.app/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>Project: CS:GO Weapons</p>
-						</a>
-						<a
-							href="https://polishcow.netlify.app/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>Project: Dancing Polish Cow</p>
-						</a>
+					<div className="footer-link-section">
+						<div className="link-header">
+							<h2>Resources</h2>
+						</div>
+						<div>
+							<Link url={'https://www.coingecko.com/'} text={'CoinGecko API'} />
+							<Link url={'https://www.chartjs.org/'} text={'Chart.js'} />
+							<Link url={'https://fontawesome.com/'} text={'Font Awesome'} />
+							<Link url={'https://www.flaticon.com/'} text={'Flaticon'} />
+							<Link url={'https://icons8.com/'} text={'Icons8'} />
+						</div>
 					</div>
-				</div>
-				<div className="footer-info-section">
-					<h2>Other</h2>
-					<div>
-						<a href="https://www.jamk.fi/" target="_blank" rel="noopener noreferrer">
-							<p>Jyväskylä University of Applied Sciences</p>
-						</a>
-						<a
-							href="https://www.coingecko.com/api_terms"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<p>CoinGecko API Terms of Service</p>
-						</a>
-						<a href="." target="_blank">
-							<p>Documentation</p>
-						</a>
+					<div className="footer-link-section">
+						<div className="link-header">
+							<h2>Developer</h2>
+						</div>
+						<div>
+							<Link
+								url={'https://github.com/0mppula/Coin_Caps'}
+								text={'GitHub Repository'}
+							/>
+							<Link
+								url={'https://omars-portfolio.netlify.app/projects.html'}
+								text={'Projects Portfolio'}
+							/>
+							<Link
+								url={'https://csgo-weapons.netlify.app/'}
+								text={'Project: CS:GO Weapons'}
+							/>
+							<Link
+								url={'https://polishcow.netlify.app/'}
+								text={'Project: Dancing Polish Cow'}
+							/>
+							<Link
+								url={'https://www.coingecko.com/api_terms'}
+								text={'CoinGecko API Terms of Service'}
+							/>
+						</div>
+					</div>
+					<div className="footer-link-section">
+						<div className="link-header">
+							<h2>Other</h2>
+						</div>
+						<div>
+							<Link
+								url={'https://www.jamk.fi/'}
+								text={'Jyväskylä University of Applied Sciences'}
+							/>
+							<Link url={'.'} text={'Documentation'} />
+						</div>
 					</div>
 				</div>
 			</div>
 			<div className="footer-bottom">
 				<div className="footer-icons">
-					<a href="https://github.com/0mppula" target="_blank" rel="noopener noreferrer">
-						<FontAwesomeIcon className="footer-icon icon" icon={faGithub} />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/omar-kraidi%C3%A9-b7a8141a8/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FontAwesomeIcon className="footer-icon icon" icon={faLinkedin} />
-					</a>
-					<a
-						href="https://twitter.com/OmarKraidie"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FontAwesomeIcon className="footer-icon icon" icon={faTwitter} />
-					</a>
-					<a
-						href="https://www.youtube.com/channel/UCdpM1SUen7ZxX2owolyIGyQ"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FontAwesomeIcon className="footer-icon icon" icon={faYoutube} />
-					</a>
+					<Icon url={'https://github.com/0mppula'} icon={faGithub} />
+					<Icon
+						url={'https://www.linkedin.com/in/omar-kraidi%C3%A9-b7a8141a8/'}
+						icon={faLinkedin}
+					/>
+					<Icon url={'https://twitter.com/OmarKraidie'} icon={faTwitter} />
+					<Icon
+						url={'https://www.youtube.com/channel/UCdpM1SUen7ZxX2owolyIGyQ'}
+						icon={faYoutube}
+					/>
 				</div>
 				<p>Developed by Omar Kraidié.</p>
 				<p>
-					Copyright <span className="copyright">2021&copy;</span> Lahti, Finland. All
+					Copyright <span className="copyright">{year}&copy;</span> Lahti, Finland. All
 					Rights Reserved.
 				</p>
 			</div>
