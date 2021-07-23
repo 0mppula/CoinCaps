@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Nav from './components/nav/Nav';
-import SearchBar from './components/search/SearchBar';
+import SearchContainer from './components/search/SearchContainer';
 import CryptoTable from './components/table/CryptoTable';
 import Footer from './components/footer/Footer';
 import LoaderLarge from './components/loaders/LoaderLarge';
@@ -16,7 +16,7 @@ function App() {
 	const [activeCurrency, setActiveCurrency] = useState(
 		JSON.parse(localStorage.getItem('activeCurrency')) || currencies[0] /* usd */
 	);
-	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')));
+	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')) || false);
 
 	useEffect(() => {
 		const getCryptoData = async () => {
@@ -35,7 +35,6 @@ function App() {
 
 	return (
 		<>
-			<ToTop />
 			<Nav
 				activeCurrency={activeCurrency}
 				setActiveCurrency={setActiveCurrency}
@@ -43,7 +42,12 @@ function App() {
 				setDarkMode={setDarkMode}
 			/>
 			<div className="container">
-				<SearchBar cryptos={cryptos} setFileredCryptos={setFileredCryptos} />
+				<SearchContainer
+					cryptos={cryptos}
+					setFileredCryptos={setFileredCryptos}
+					activeCurrency={activeCurrency}
+					darkMode={darkMode}
+				/>
 				{loading && <LoaderLarge darkMode={darkMode} />}
 				{!loading && (
 					<CryptoTable
@@ -54,6 +58,7 @@ function App() {
 				)}
 			</div>
 			<Footer darkMode={darkMode} />
+			<ToTop />
 		</>
 	);
 }
