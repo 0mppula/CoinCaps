@@ -6,14 +6,14 @@ import CryptoTable from './components/table/CryptoTable';
 import Footer from './components/footer/Footer';
 import LoaderLarge from './components/loaders/LoaderLarge';
 
-import { usdConfig } from './utils/FormatValues';
+import { currencies } from './utils/FormatValues';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [filteredCryptos, setFileredCryptos] = useState([]);
 	const [activeCurrency, setActiveCurrency] = useState(
-		JSON.parse(localStorage.getItem('activeCurrency')) || usdConfig
+		JSON.parse(localStorage.getItem('activeCurrency')) || currencies[0] /* usd */
 	);
 	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')));
 
@@ -42,9 +42,8 @@ function App() {
 			/>
 			<div className="container">
 				<SearchBar cryptos={cryptos} setFileredCryptos={setFileredCryptos} />
-				{loading ? (
-					<LoaderLarge darkMode={darkMode} />
-				) : (
+				{loading && <LoaderLarge darkMode={darkMode} />}
+				{!loading && (
 					<CryptoTable
 						filteredCryptos={filteredCryptos}
 						activeCurrency={activeCurrency}
