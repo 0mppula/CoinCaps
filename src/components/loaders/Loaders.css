@@ -1,3 +1,13 @@
+/* Mini */
+.chart-loader-wrapper-mini {
+	display: flex;
+	gap: 0 0.5rem;
+}
+.chart-loader-wrapper-mini img {
+	height: 24px;
+}
+/* End Mini */
+
 /* Small */
 .chart-loader-wrapper-smallchart-loader-wrapper-small {
 	display: flex;
