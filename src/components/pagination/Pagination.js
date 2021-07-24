@@ -7,8 +7,6 @@ const Pagination = ({ activeCurrency, cryptopsPerPage }) => {
 		pageNumbers.push(i);
 	}
 
-	console.log(pageNumbers);
-
 	return (
 		<div className="pagination">
 			<ul className="pages">
