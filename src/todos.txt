@@ -53,6 +53,11 @@
 - Import functions where needed. ✔
 - Refactor all formatting functions for future currency changes. ✔
 
+// Pagination
+- Create Pagination logic.
+- Create pagication element.
+- Create pagination count selector.
+
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
 - Add resources to footer. ✔
