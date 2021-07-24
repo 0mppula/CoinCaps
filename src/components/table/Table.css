@@ -8,7 +8,7 @@
 	color: var(--clr-text-primary);
 	background-color: var(--clr-background-L1);
 	border-radius: 4px;
-	margin-bottom: 8rem;
+	margin-bottom: 1rem;
 	border: solid 2px var(--clr-primary-opacity-low);
 	overflow-x: auto;
 	overflow-y: hidden;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CurrencyList from './CurrencyList';
-import { currencies } from '../../utils/FormatValues';
+import { currencies } from '../../utils/Currencies';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';

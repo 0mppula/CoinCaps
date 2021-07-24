@@ -5,9 +5,10 @@ import SearchContainer from './components/search/SearchContainer';
 import CryptoTable from './components/table/CryptoTable';
 import Footer from './components/footer/Footer';
 import LoaderLarge from './components/loaders/LoaderLarge';
+import Pagination from './components/pagination/Pagination';
 import ToTop from './components/tools/ToTop';
 
-import { currencies } from './utils/FormatValues';
+import { currencies } from './utils/Currencies';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
@@ -17,6 +18,9 @@ function App() {
 		JSON.parse(localStorage.getItem('activeCurrency')) || currencies[0] /* usd */
 	);
 	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')) || false);
+	// Pagination
+	const [currentPage, setCurrentPage] = useState(1);
+	const [cryptopsPerPage, setCryptosPerPage] = useState(25);
 
 	useEffect(() => {
 		const getCryptoData = async () => {
@@ -32,6 +36,12 @@ function App() {
 		getCryptoData();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeCurrency]);
+
+	// Get current cryptos
+	const indexOfLastCrypto = currentPage * cryptopsPerPage;
+	const indexOfFirstCrypto = indexOfLastCrypto - cryptopsPerPage;
+	const currentCryptos = filteredCryptos.slice(indexOfFirstCrypto, indexOfLastCrypto);
+	console.log(currentCryptos);
 
 	return (
 		<>
@@ -51,11 +61,12 @@ function App() {
 				{loading && <LoaderLarge darkMode={darkMode} />}
 				{!loading && (
 					<CryptoTable
-						filteredCryptos={filteredCryptos}
+						filteredCryptos={currentCryptos}
 						activeCurrency={activeCurrency}
 						darkMode={darkMode}
 					/>
 				)}
+				<Pagination filteredCryptos={filteredCryptos} cryptopsPerPage={cryptopsPerPage} />
 			</div>
 			<Footer darkMode={darkMode} />
 			<ToTop />

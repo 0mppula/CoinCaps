@@ -6,6 +6,7 @@ import './components/table/Table.css';
 import './components/search/SearchBar.css';
 import './components/nav/Nav.css';
 import './components/footer/Footer.css';
+import './components/pagination/Pagination.css';
 import './components/tools/ToTop.css';
 
 import App from './App';
