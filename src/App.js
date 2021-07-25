@@ -12,24 +12,28 @@ import { currencies } from './utils/Currencies';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [filteredCryptos, setFileredCryptos] = useState([]);
+	const [currentCryptos, setCurrentCryptos] = useState([]);
+	const [filteredCryptos, setFileredCryptos] = useState(null);
 	const [activeCurrency, setActiveCurrency] = useState(
 		JSON.parse(localStorage.getItem('activeCurrency')) || currencies[0] /* usd */
 	);
+	const [loading, setLoading] = useState(true);
 	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')) || false);
 	// Pagination
 	const [currentPage, setCurrentPage] = useState(1);
 	const [cryptopsPerPage, setCryptosPerPage] = useState(25);
+	const indexOfLastCrypto = currentPage * cryptopsPerPage;
+	const indexOfFirstCrypto = indexOfLastCrypto - cryptopsPerPage;
 
 	useEffect(() => {
 		const getCryptoData = async () => {
 			setLoading(true);
-			const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${activeCurrency.code}&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=24h%2C7d`;
+			const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${activeCurrency.code}&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=24h%2C7d`;
 			const response = await fetch(url);
 			const data = await response.json();
+			const slicedData = data.slice(indexOfFirstCrypto, indexOfLastCrypto);
 			setCryptos(data);
-			setFileredCryptos(data);
+			setCurrentCryptos(slicedData);
 			setLoading(false);
 		};
 
@@ -37,11 +41,9 @@ function App() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeCurrency]);
 
-	// Get current cryptos
-	const indexOfLastCrypto = currentPage * cryptopsPerPage;
-	const indexOfFirstCrypto = indexOfLastCrypto - cryptopsPerPage;
-	const currentCryptos = filteredCryptos.slice(indexOfFirstCrypto, indexOfLastCrypto);
-	console.log(currentCryptos);
+	useEffect(() => {
+		setCurrentCryptos(cryptos.slice(indexOfFirstCrypto, indexOfLastCrypto));
+	}, [currentPage, cryptopsPerPage]);
 
 	return (
 		<>
@@ -56,17 +58,27 @@ function App() {
 					cryptos={cryptos}
 					setFileredCryptos={setFileredCryptos}
 					activeCurrency={activeCurrency}
+					currentCryptos={currentCryptos}
 					darkMode={darkMode}
 				/>
 				{loading && <LoaderLarge darkMode={darkMode} />}
 				{!loading && (
 					<CryptoTable
-						filteredCryptos={currentCryptos}
+						filteredCryptos={filteredCryptos}
 						activeCurrency={activeCurrency}
+						currentCryptos={currentCryptos}
 						darkMode={darkMode}
 					/>
 				)}
-				<Pagination filteredCryptos={filteredCryptos} cryptopsPerPage={cryptopsPerPage} />
+				<Pagination
+					cryptos={cryptos.length}
+					cryptopsPerPage={cryptopsPerPage}
+					setCryptosPerPage={setCryptosPerPage}
+					currentPage={currentPage}
+					setCurrentPage={setCurrentPage}
+					indexOfFirstCrypto={indexOfFirstCrypto}
+					indexOfLastCrypto={indexOfLastCrypto}
+				/>
 			</div>
 			<Footer darkMode={darkMode} />
 			<ToTop />

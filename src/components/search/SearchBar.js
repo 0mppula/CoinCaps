@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = ({ cryptos, setFileredCryptos }) => {
+const SearchBar = ({ cryptos, setFileredCryptos, currentCryptos }) => {
 	const [query, setQuery] = useState('');
 	const inputRef = useRef();
 
@@ -14,7 +14,7 @@ const SearchBar = ({ cryptos, setFileredCryptos }) => {
 			return crytpo.name.toLowerCase().includes(inputVal.toLowerCase());
 		});
 
-		inputVal ? setFileredCryptos(filtered) : setFileredCryptos(cryptos);
+		inputVal ? setFileredCryptos(filtered) : setFileredCryptos(null);
 	};
 
 	const handleEsc = (e) => {

@@ -1,13 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const CurrencyList = ({
-	listOpen,
-	handleSelect,
-	toggleList,
-	setListOpen,
-	activeCurrency,
-	currencies,
-}) => {
+const CurrencyList = ({ listOpen, handleSelect, setListOpen, activeCurrency, currencies }) => {
 	useEffect(() => {
 		let handler = (e) => {
 			if (!listRef.current.contains(e.target) && listOpen) {

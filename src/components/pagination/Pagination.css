@@ -1,6 +1,7 @@
 .pagination {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
 	color: var(--clr-text-primary);
 	background: var(--clr-background-L1);
 	height: 50px;
@@ -10,18 +11,18 @@
 	border: solid 2px var(--clr-primary-opacity-low);
 }
 
-.pages {
+.page-numbers {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 0.35rem;
-	width: 60%;
+	flex: 1 1 50%;
 	list-style-type: none;
 }
 
-.pages li {
+.page-numbers li {
 	text-align: center;
-	background: var(--clr-background-L2);
+	background: var(--clr-background-L1);
 	flex: 1 1 2%;
 	max-width: 25px;
 	border: solid 1px var(--clr-primary-opacity-low);
@@ -30,15 +31,76 @@
 	cursor: pointer;
 }
 
-.pages li:hover {
+.page-numbers li:hover {
 	background: var(--clr-background-L3);
 }
 
-.pages .active {
+.page-numbers .active {
 	background: var(--clr-primary);
 	border: solid 1px var(--clr-primary-opacity-low);
 }
 
-.pages .active:hover {
+.page-numbers .active:hover {
 	background: var(--clr-primary);
+}
+
+.page-showing {
+	flex-basis: 25%;
+	padding: 0 1rem;
+}
+
+.row-selector {
+	flex-basis: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 0.65rem;
+	position: relative;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	gap: 0.25rem;
+	user-select: none;
+	margin-left: 0.35rem;
+	padding: 0.35rem 0.5rem;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.row:hover {
+	background: var(--clr-hover);
+}
+
+.row-list {
+	opacity: 0;
+	width: 50px;
+	text-align: center;
+	background: var(--clr-background-L2);
+	padding: 0.15rem;
+	position: absolute;
+	list-style: none;
+	border-radius: 2px;
+	pointer-events: none;
+	transition: 0.2s ease;
+	right: 13px;
+	top: 44px;
+}
+
+.row-list.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.row-item {
+	user-select: none;
+	padding: 0.1rem 0.35rem;
+	cursor: pointer;
+}
+
+.row-item:hover {
+	padding: 0.1rem 0.35rem;
+	background: var(--clr-hover);
 }
