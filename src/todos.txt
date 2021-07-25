@@ -3,11 +3,15 @@
 - Store cryptocurrencies in state as an array with init app. ✔
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
 - Style APP so that it look decant for further development. ✔
+- Add 1000 cryptos on APP load to cryptos. 👷‍♂️
+- Check hover/active styles of whole APP both in light and dark mode. 👷‍♂️
 
 // Nav:
 - Style nav ✔
 - Name the project Coin Caps and add a place holder logo. ✔
 - Add dark mode. ✔
+- Add burger to navbar. 👷‍♂️
+- Make navbar responsive. 👷‍♂️
 
 // CurrencyList:
 - Update selector icon when currency is selected. ✔
@@ -63,6 +67,8 @@
 - Filter out selected row count from selector list. ✔
 - Add triple dot logic to paginator. ✔
 - Disable chevrons on page selector when not needed (dont remove from dom for better UX) 👷‍♂️
+- Add page skip functionality. 👷‍♂️
+- Make paginator responsive. 👷‍♂️
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
