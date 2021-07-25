@@ -54,9 +54,11 @@
 - Refactor all formatting functions for future currency changes. ✔
 
 // Pagination
-- Create Pagination logic.
-- Create pagication element.
-- Create pagination count selector.
+- Create Pagination logic. ✔
+- Create pagication element. ✔
+- Create pagination count selector. ✔
+- Style the paginator.
+- Ensure pageY stays the same on re-render.
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
