@@ -57,8 +57,10 @@
 - Create Pagination logic. ✔
 - Create pagication element. ✔
 - Create pagination count selector. ✔
-- Style the paginator.
-- Ensure pageY stays the same on re-render.
+- Style the paginator. 👷‍♂️
+- Ensure pageY stays the same on re-render. 👷‍♂️
+- Hide paginator when filetered cryptos is active. 👷‍♂️
+- Filter row selector to remove selector amount. 👷‍♂️
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
