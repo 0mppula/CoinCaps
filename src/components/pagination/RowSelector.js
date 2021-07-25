@@ -4,7 +4,7 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 
 const RowSelector = ({ cryptopsPerPage, setCryptosPerPage, setCurrentPage }) => {
 	const [listOpen, setListOpen] = useState(false);
-	const rows = [25, 50, 100];
+	const rows = [10, 25, 50, 100];
 
 	const handleClick = (row) => {
 		setCryptosPerPage(row);

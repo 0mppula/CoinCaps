@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import RowSelector from './RowSelector';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,32 +13,43 @@ const Pagination = ({
 	indexOfFirstCrypto,
 	indexOfLastCrypto,
 }) => {
-	const [pageLimit, setPageLimit] = useState(5);
-	const [maxPageLimit, setMaxPageLimit] = useState(5);
-	const [minPageLimit, setMinPageLimit] = useState(1);
-	const pageNumbers = [];
-
-	// useEffect(() => {
-	// 	if (currentPage > 3) {
-	// 		setMaxPageLimit((prev) => prev + 1);
-	// 		setMinPageLimit((prev) => prev + 1);
-	// 	}
-	// }, [currentPage]);
-
-	const handleNext = () => {
-		setCurrentPage((prev) => prev + 1);
-	};
-	const handlePrev = () => {
-		console.log('prev');
-		setCurrentPage((prev) => prev - 1);
-	};
+	const [customPageNumbers, setCustomPageNumbers] = useState([]);
+	let allPageNumbers = [];
 
 	for (let i = 1; i <= Math.ceil(cryptos / cryptopsPerPage); i++) {
-		pageNumbers.push(i);
+		allPageNumbers.push(i);
 	}
 
+	useEffect(() => {
+		let temp;
+		let dots = '…';
+
+		if (allPageNumbers.length > 6) {
+			if (currentPage < 5) {
+				let slice = allPageNumbers.slice(0, 5);
+				temp = [...slice, dots, allPageNumbers.length];
+			} else if (currentPage > 4 && currentPage + 2 < allPageNumbers.length) {
+				let slice = allPageNumbers.slice(currentPage - 2, currentPage + 1);
+				temp = [1, dots, ...slice, dots, allPageNumbers.length];
+			} else if (currentPage + 2 === allPageNumbers.length) {
+				let slice = allPageNumbers.slice(currentPage - 3, currentPage + 1);
+				temp = [1, dots, ...slice, allPageNumbers.length];
+			} else if (currentPage + 1 === allPageNumbers.length) {
+				let slice = allPageNumbers.slice(currentPage - 3, currentPage);
+				temp = [1, dots, ...slice, allPageNumbers.length];
+			} else if (currentPage === allPageNumbers.length) {
+				temp = [1, dots, currentPage - 3, currentPage - 2, currentPage - 1, currentPage];
+			}
+		} else {
+			temp = [...allPageNumbers];
+		}
+
+		setCustomPageNumbers(temp);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [currentPage, cryptopsPerPage]);
+
 	const handleClick = (page) => {
-		setCurrentPage(page);
+		!isNaN(page) && setCurrentPage(page);
 	};
 
 	return (
@@ -51,49 +62,30 @@ const Pagination = ({
 			</div>
 			<ul className="page-selector">
 				{currentPage > 1 && (
-					<li className="next-prev-page">
-						<FontAwesomeIcon
-							icon={faChevronLeft}
-							// onClick={() => setCurrentPage((prev) => prev - 1)}
-							onClick={() => handlePrev()}
-						/>
-					</li>
-				)}
-				{currentPage > 3 && <li>...</li>}
-				{pageNumbers.map((number, i) => {
-					if (number <= maxPageLimit && number >= minPageLimit) {
-						return (
-							<li
-								key={i}
-								className={currentPage === i + 1 ? 'active' : ''}
-								tabIndex={0}
-								onKeyPress={() => handleClick(i + 1)}
-								onClick={() => handleClick(i + 1)}
-							>
-								{number}
-							</li>
-						);
-					}
-					{
-						/* {pageNumbers.map((number, i) => (
-							<li
-							key={i}
-							className={currentPage === i + 1 ? 'active' : ''}
-							tabIndex={0}
-							onKeyPress={() => handleClick(i + 1)}
-							onClick={() => handleClick(i + 1)}
-							>
-							{number}
-							</li>
-							))} */
-					}
-				})}
-				{currentPage < pageNumbers.length && <li>...</li>}
-				{currentPage < pageNumbers.length && (
 					<li
 						className="next-prev-page"
-						// onClick={() => setCurrentPage((prev) => prev + 1)}
-						onClick={() => handleNext()}
+						onClick={() => setCurrentPage((prev) => prev - 1)}
+					>
+						<FontAwesomeIcon icon={faChevronLeft} />
+					</li>
+				)}
+
+				{customPageNumbers.map((number, i) => (
+					<li
+						key={i}
+						className={currentPage === number ? 'active' : ''}
+						tabIndex={0}
+						onKeyPress={() => handleClick(number)}
+						onClick={() => handleClick(number)}
+					>
+						{number}
+					</li>
+				))}
+
+				{currentPage < allPageNumbers.length && (
+					<li
+						className="next-prev-page"
+						onClick={() => setCurrentPage((prev) => prev + 1)}
 					>
 						<FontAwesomeIcon icon={faChevronRight} />
 					</li>
