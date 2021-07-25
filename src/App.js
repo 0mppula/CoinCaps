@@ -21,7 +21,7 @@ function App() {
 	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')) || false);
 	// Pagination
 	const [currentPage, setCurrentPage] = useState(1);
-	const [cryptopsPerPage, setCryptosPerPage] = useState(25);
+	const [cryptopsPerPage, setCryptosPerPage] = useState(5);
 	const indexOfLastCrypto = currentPage * cryptopsPerPage;
 	const indexOfFirstCrypto = indexOfLastCrypto - cryptopsPerPage;
 
@@ -42,7 +42,9 @@ function App() {
 	}, [activeCurrency]);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		setCurrentCryptos(cryptos.slice(indexOfFirstCrypto, indexOfLastCrypto));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPage, cryptopsPerPage]);
 
 	return (
@@ -70,15 +72,17 @@ function App() {
 						darkMode={darkMode}
 					/>
 				)}
-				<Pagination
-					cryptos={cryptos.length}
-					cryptopsPerPage={cryptopsPerPage}
-					setCryptosPerPage={setCryptosPerPage}
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-					indexOfFirstCrypto={indexOfFirstCrypto}
-					indexOfLastCrypto={indexOfLastCrypto}
-				/>
+				{!filteredCryptos && !loading && (
+					<Pagination
+						cryptos={cryptos.length}
+						cryptopsPerPage={cryptopsPerPage}
+						setCryptosPerPage={setCryptosPerPage}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+						indexOfFirstCrypto={indexOfFirstCrypto}
+						indexOfLastCrypto={indexOfLastCrypto}
+					/>
+				)}
 			</div>
 			<Footer darkMode={darkMode} />
 			<ToTop />

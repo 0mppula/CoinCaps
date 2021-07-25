@@ -6,21 +6,20 @@
 	background: var(--clr-background-L1);
 	height: 50px;
 	width: 100%;
-	margin-bottom: 7rem;
 	border-radius: 4px;
 	border: solid 2px var(--clr-primary-opacity-low);
 }
 
-.page-numbers {
+/* Page Selector Styles  */
+.page-selector {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 0.35rem;
 	flex: 1 1 50%;
 	list-style-type: none;
 }
 
-.page-numbers li {
+.page-selector li {
 	text-align: center;
 	background: var(--clr-background-L1);
 	flex: 1 1 2%;
@@ -28,21 +27,37 @@
 	border: solid 1px var(--clr-primary-opacity-low);
 	border-radius: 2px;
 	transition: 0.2s ease;
+	user-select: none;
 	cursor: pointer;
 }
 
-.page-numbers li:hover {
+.page-selector li:hover {
+	color: var(--clr-primary);
 	background: var(--clr-background-L3);
 }
 
-.page-numbers .active {
+.page-selector .active {
+	color: var(--clr-white);
 	background: var(--clr-primary);
 	border: solid 1px var(--clr-primary-opacity-low);
 }
 
-.page-numbers .active:hover {
+.page-selector .active:hover {
+	color: var(--clr-white);
 	background: var(--clr-primary);
 }
+
+.next-prev-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.8rem;
+}
+
+.next-prev-page:hover {
+	color: var(--clr-primary);
+}
+/* End Page Selector Styles  */
 
 .page-showing {
 	flex-basis: 25%;

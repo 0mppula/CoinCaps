@@ -13,7 +13,12 @@ const ToTop = () => {
 	});
 
 	const scrollToTop = () => {
-		window.scrollTo(0, 0);
+		console.log(document.getElementsByTagName('html').style);
+		window.scrollTo({
+			top: 100,
+			left: 100,
+			behavior: 'smooth',
+		});
 	};
 
 	return (

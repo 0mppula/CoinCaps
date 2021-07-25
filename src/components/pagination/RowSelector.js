@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 
-const RowSelector = ({ cryptopsPerPage, setCryptosPerPage }) => {
+const RowSelector = ({ cryptopsPerPage, setCryptosPerPage, setCurrentPage }) => {
 	const [listOpen, setListOpen] = useState(false);
 	const rows = [25, 50, 100];
 
 	const handleClick = (row) => {
 		setCryptosPerPage(row);
+		setCurrentPage(1);
+		setListOpen(false);
 	};
 
 	useEffect(() => {
@@ -39,17 +41,19 @@ const RowSelector = ({ cryptopsPerPage, setCryptosPerPage }) => {
 				<FontAwesomeIcon icon={faSortDown} />
 			</div>
 			<ul ref={listRef} className={`row-list ${listOpen ? 'active' : ''}`}>
-				{rows.map((row, i) => (
-					<li
-						key={i}
-						className="row-item"
-						tabIndex={0}
-						onKeyPress={() => handleClick(row)}
-						onClick={() => handleClick(row)}
-					>
-						{row}
-					</li>
-				))}
+				{rows
+					.filter((row) => row !== cryptopsPerPage)
+					.map((row, i) => (
+						<li
+							key={i}
+							className="row-item"
+							tabIndex={0}
+							onKeyPress={() => handleClick(row)}
+							onClick={() => handleClick(row)}
+						>
+							{row}
+						</li>
+					))}
 			</ul>
 		</div>
 	);
