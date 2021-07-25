@@ -5,25 +5,16 @@ URL for individual cryptocurrency trailing 7 day prices.
 https://api.coingecko.com/api/v3/coins/{nano}/market_chart?vs_currency={usd}&days={7}&interval=daily
 
 h's:
-- 3
-- 3
-- 3
-- 4
-- 3
-- 3
-- 3
-- 4
-- 3
-- 4
-- 3
-- 5
-- 4
-- 3
-- 4
-- 3
-- 3
-- 3
-- 3
-- 3
-- 3
-- 3
+- 3, 3 // 6
+- 3, 4 // 7
+- 3, 3 // 6
+- 3, 4 // 7
+- 3, 4 // 7
+- 3, 5 // 8
+- 4, 3 // 7
+- 4, 3 // 7
+- 3, 3 // 6
+- 3, 3 // 6
+- 3, 3 // 6
+------------
+Total: 76
