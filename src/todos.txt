@@ -5,6 +5,7 @@
 - Style APP so that it look decant for further development. ✔
 - Add 1000 cryptos on APP load to cryptos. 👷‍♂️
 - Check hover/active styles of whole APP both in light and dark mode. 👷‍♂️
+- Check tab indicies of app, update if needed.
 
 // Nav:
 - Style nav ✔
@@ -37,6 +38,7 @@
 - Add loader to crypto list. ✔
 - Add tabindexes. ✔
 - Add hover/selected highlight to crypto items. ✔
+- Keep padding on the right of crypto table on smaller screens. 👷‍♂️
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -66,9 +68,9 @@
 - Hide paginator when filetered cryptos is active. ✔
 - Filter out selected row count from selector list. ✔
 - Add triple dot logic to paginator. ✔
-- Disable chevrons on page selector when not needed (dont remove from dom for better UX) 👷‍♂️
-- Add page skip functionality. 👷‍♂️
-- Make paginator responsive. 👷‍♂️
+- Disable chevrons on page selector when not needed (dont remove from dom for better UX) ✔
+- Add page skip functionality. ✔
+- Make paginator responsive. ✔
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
