@@ -47,23 +47,30 @@ table {
 th.rank {
 	width: 5%;
 }
+th.market {
+	min-width: 160px;
+}
 th.img {
 	width: 7%;
 }
 th.price-change {
-	width: 70px;
+	min-width: 70px;
 }
 th.symbol {
 	width: 14%;
+	min-width: 115px;
 }
 th.name {
 	width: 15%;
+	min-width: 115px;
 }
 th.price {
 	width: 16%;
+	min-width: 115px;
 }
 th.info {
 	width: 3%;
+	min-width: 25px;
 }
 
 /* End Headers */
@@ -88,11 +95,6 @@ th.info {
 	border-bottom: 0.25rem solid var(--clr-background-L2);
 	border-top: 0.25rem solid var(--clr-background-L2);
 }
-
-.crypto-table tbody tr {
-	/* border-top: 0.5rem solid rgba(255, 255, 255, 0.25); */
-}
-/* FIX MEE */
 
 .drop-info-icon {
 	top: -0.15rem;
@@ -186,7 +188,6 @@ th.info {
 /* End Chart */
 
 /* Info under crypto item */
-
 .border-bottom {
 	position: absolute;
 	left: 0;
@@ -227,4 +228,7 @@ th.info {
 		bottom: 0;
 		height: calc(1rem / 32) !important; /* fixes <1px borders */
 	}
+}
+
+@media only screen and (max-width: 768px) {
 }

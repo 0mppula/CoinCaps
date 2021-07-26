@@ -22,23 +22,29 @@ const Pagination = ({
 
 	useEffect(() => {
 		let temp;
-		let dots = '…';
+		let dots = String.fromCharCode(parseInt('2026', 16));
 
 		if (allPageNumbers.length > 6) {
 			if (currentPage < 5) {
+				// Pages 1 --> 4
 				let slice = allPageNumbers.slice(0, 5);
 				temp = [...slice, dots, allPageNumbers.length];
 			} else if (currentPage > 4 && currentPage + 2 < allPageNumbers.length) {
+				// Pages 4 --> last Page - 3
 				let slice = allPageNumbers.slice(currentPage - 2, currentPage + 1);
 				temp = [1, dots, ...slice, dots, allPageNumbers.length];
 			} else if (currentPage + 2 === allPageNumbers.length) {
+				// last Page - 2
 				let slice = allPageNumbers.slice(currentPage - 3, currentPage + 1);
 				temp = [1, dots, ...slice, allPageNumbers.length];
 			} else if (currentPage + 1 === allPageNumbers.length) {
-				let slice = allPageNumbers.slice(currentPage - 3, currentPage);
+				// last Page - 1
+				let slice = allPageNumbers.slice(currentPage - 4, currentPage);
 				temp = [1, dots, ...slice, allPageNumbers.length];
 			} else if (currentPage === allPageNumbers.length) {
-				temp = [1, dots, currentPage - 3, currentPage - 2, currentPage - 1, currentPage];
+				// last Page
+				let slice = allPageNumbers.slice(currentPage - 5, currentPage);
+				temp = [1, dots, ...slice];
 			}
 		} else {
 			temp = [...allPageNumbers];
@@ -49,26 +55,27 @@ const Pagination = ({
 	}, [currentPage, cryptopsPerPage]);
 
 	const handleClick = (page) => {
+		const skipper = String.fromCharCode(parseInt('2026', 16));
 		!isNaN(page) && setCurrentPage(page);
+		page === skipper && setCurrentPage((prev) => prev + 2);
 	};
 
 	return (
 		<div className="pagination">
 			<div className="page-showing">
 				<p>
-					Showing {indexOfFirstCrypto + 1} -{' '}
-					{indexOfLastCrypto < cryptos ? indexOfLastCrypto : cryptos} out of {cryptos}
+					{`Showing ${indexOfFirstCrypto + 1} - ${
+						indexOfLastCrypto < cryptos ? indexOfLastCrypto : cryptos
+					} out of ${cryptos}`}
 				</p>
 			</div>
 			<ul className="page-selector">
-				{currentPage > 1 && (
-					<li
-						className="next-prev-page"
-						onClick={() => setCurrentPage((prev) => prev - 1)}
-					>
-						<FontAwesomeIcon icon={faChevronLeft} />
-					</li>
-				)}
+				<li
+					className={`next-prev-page ${currentPage < 2 ? 'disabled' : ''}`}
+					onClick={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
+				>
+					<FontAwesomeIcon icon={faChevronLeft} />
+				</li>
 
 				{customPageNumbers.map((number, i) => (
 					<li
@@ -82,14 +89,16 @@ const Pagination = ({
 					</li>
 				))}
 
-				{currentPage < allPageNumbers.length && (
-					<li
-						className="next-prev-page"
-						onClick={() => setCurrentPage((prev) => prev + 1)}
-					>
-						<FontAwesomeIcon icon={faChevronRight} />
-					</li>
-				)}
+				<li
+					className={`next-prev-page ${
+						currentPage >= allPageNumbers.length ? 'disabled' : ''
+					}`}
+					onClick={() =>
+						setCurrentPage((prev) => (prev < allPageNumbers.length ? prev + 1 : prev))
+					}
+				>
+					<FontAwesomeIcon icon={faChevronRight} />
+				</li>
 			</ul>
 			<RowSelector
 				cryptopsPerPage={cryptopsPerPage}
