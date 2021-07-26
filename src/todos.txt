@@ -71,6 +71,7 @@
 - Disable chevrons on page selector when not needed (dont remove from dom for better UX) ✔
 - Add page skip functionality. ✔
 - Make paginator responsive. ✔
+- Fix showing max value 👷‍♂️
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
