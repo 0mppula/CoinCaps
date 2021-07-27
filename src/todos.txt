@@ -38,7 +38,7 @@
 - Add loader to crypto list. ✔
 - Add tabindexes. ✔
 - Add hover/selected highlight to crypto items. ✔
-- Keep padding on the right of crypto table on smaller screens. 👷‍♂️
+- Keep padding on the right of crypto table on smaller screens. ✔
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -71,7 +71,7 @@
 - Disable chevrons on page selector when not needed (dont remove from dom for better UX) ✔
 - Add page skip functionality. ✔
 - Make paginator responsive. ✔
-- Fix showing max value 👷‍♂️
+- Fix showing max value ✔
 
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
