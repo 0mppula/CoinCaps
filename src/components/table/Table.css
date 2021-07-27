@@ -46,12 +46,14 @@ table {
 /* Headers */
 th.rank {
 	width: 5%;
+	min-width: 75px;
 }
 th.market {
 	min-width: 160px;
 }
 th.img {
 	width: 7%;
+	min-width: 50px;
 }
 th.price-change {
 	min-width: 70px;
@@ -97,6 +99,7 @@ th.info {
 }
 
 .drop-info-icon {
+	transition: 0.2s ease;
 	top: -0.15rem;
 	right: 0.25rem;
 	font-size: 1.5rem;
@@ -175,7 +178,6 @@ th.info {
 
 .chart {
 	background-color: var(--clr-background-L3);
-	/* border: solid 1px var(--clr-primary-opacity-low); */
 	border-radius: 2px;
 	transition: var(--transition-time);
 }
@@ -230,5 +232,8 @@ th.info {
 	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 840px) {
+	th.info {
+		min-width: 42px;
+	}
 }
