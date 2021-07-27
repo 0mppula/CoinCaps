@@ -60,6 +60,27 @@ const Pagination = ({
 		page === skipper && setCurrentPage((prev) => prev + 2);
 	};
 
+	// Next/Prev Buttons
+	const PrevBtn = () => (
+		<li
+			className={`next-prev-page ${currentPage < 2 ? 'disabled' : ''}`}
+			onClick={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
+		>
+			<FontAwesomeIcon icon={faChevronLeft} />
+		</li>
+	);
+
+	const NextBtn = () => (
+		<li
+			className={`next-prev-page ${currentPage >= allPageNumbers.length ? 'disabled' : ''}`}
+			onClick={() =>
+				setCurrentPage((prev) => (prev < allPageNumbers.length ? prev + 1 : prev))
+			}
+		>
+			<FontAwesomeIcon icon={faChevronRight} />
+		</li>
+	);
+
 	return (
 		<div className="pagination">
 			<div className="page-showing">
@@ -70,13 +91,7 @@ const Pagination = ({
 				</p>
 			</div>
 			<ul className="page-selector">
-				<li
-					className={`next-prev-page ${currentPage < 2 ? 'disabled' : ''}`}
-					onClick={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
-				>
-					<FontAwesomeIcon icon={faChevronLeft} />
-				</li>
-
+				<PrevBtn />
 				{customPageNumbers.map((number, i) => (
 					<li
 						key={i}
@@ -88,17 +103,7 @@ const Pagination = ({
 						{number}
 					</li>
 				))}
-
-				<li
-					className={`next-prev-page ${
-						currentPage >= allPageNumbers.length ? 'disabled' : ''
-					}`}
-					onClick={() =>
-						setCurrentPage((prev) => (prev < allPageNumbers.length ? prev + 1 : prev))
-					}
-				>
-					<FontAwesomeIcon icon={faChevronRight} />
-				</li>
+				<NextBtn />
 			</ul>
 			<RowSelector
 				cryptopsPerPage={cryptopsPerPage}
