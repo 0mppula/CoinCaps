@@ -4,7 +4,7 @@
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
 - Style APP so that it look decant for further development. ✔
 - Add 1000 cryptos on APP load to cryptos. 👷‍♂️
-- Check hover/active styles of whole APP both in light and dark mode. 👷‍♂️
+- Check hover/active styles of whole APP both in light and dark mode. ✔
 - Check tab indicies of app, update if needed.
 
 // Nav:
@@ -39,6 +39,7 @@
 - Add tabindexes. ✔
 - Add hover/selected highlight to crypto items. ✔
 - Keep padding on the right of crypto table on smaller screens. ✔
+- Remove padding from right of cryptotable on small screens (adjust rank/img th to achieve this :)). or add divs. ✔
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -76,4 +77,6 @@
 // Create Footer️ ✔
 - Add a dynamically updating copyright date. ✔
 - Add resources to footer. ✔
+
+// Chart fix chart not taking 100% of container.
 
