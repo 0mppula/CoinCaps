@@ -9,7 +9,8 @@
 /* End Mini */
 
 /* Small */
-.chart-loader-wrapper-smallchart-loader-wrapper-small {
+.chart-loader-wrapper-small {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -27,12 +28,6 @@
 	animation: spin 1s linear infinite;
 }
 
-.chart-loader-wrapper-smallchart-loader-wrapper-small {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 /* End Small */
 
 /* Large */

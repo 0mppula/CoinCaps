@@ -43,17 +43,21 @@ table {
 	height: 0.2rem;
 }
 
+.table-padding-right {
+	padding: 0 0.8rem 0 0.3rem;
+}
+
 /* Headers */
 th.rank {
 	width: 5%;
-	min-width: 75px;
+	min-width: 85px;
 }
 th.market {
 	min-width: 160px;
 }
 th.img {
 	width: 7%;
-	min-width: 50px;
+	min-width: 40px;
 }
 th.price-change {
 	min-width: 70px;
@@ -72,7 +76,6 @@ th.price {
 }
 th.info {
 	width: 3%;
-	min-width: 25px;
 }
 
 /* End Headers */
@@ -163,7 +166,6 @@ th.info {
 }
 
 /* Chart */
-
 .chart-info-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -172,7 +174,9 @@ th.info {
 }
 
 .chart-wrapper {
-	width: 130px;
+	display: flex;
+	max-width: 160px;
+	min-width: 140px;
 	margin-bottom: 1.25rem;
 }
 
@@ -233,7 +237,7 @@ th.info {
 }
 
 @media only screen and (max-width: 840px) {
-	th.info {
-		min-width: 42px;
+	.crypto-table {
+		padding: 1rem 0;
 	}
 }

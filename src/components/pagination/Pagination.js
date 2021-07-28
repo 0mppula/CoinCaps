@@ -54,15 +54,17 @@ const Pagination = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPage, cryptopsPerPage]);
 
-	const handleClick = (page) => {
+	const handleClick = (page, index) => {
 		const skipper = String.fromCharCode(parseInt('2026', 16));
 		!isNaN(page) && setCurrentPage(page);
-		page === skipper && setCurrentPage((prev) => prev + 2);
+		page === skipper && index !== 1 && setCurrentPage((prev) => prev + 2); /* next skipper */
+		page === skipper && index === 1 && setCurrentPage((prev) => prev - 2); /* prev skipper */
 	};
 
 	// Next/Prev Buttons
 	const PrevBtn = () => (
 		<li
+			tabIndex={`${currentPage > 1 && 0}`}
 			className={`next-prev-page ${currentPage < 2 ? 'disabled' : ''}`}
 			onClick={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
 		>
@@ -72,6 +74,7 @@ const Pagination = ({
 
 	const NextBtn = () => (
 		<li
+			tabIndex={`${currentPage < allPageNumbers.length && 0}`}
 			className={`next-prev-page ${currentPage >= allPageNumbers.length ? 'disabled' : ''}`}
 			onClick={() =>
 				setCurrentPage((prev) => (prev < allPageNumbers.length ? prev + 1 : prev))
@@ -97,8 +100,8 @@ const Pagination = ({
 						key={i}
 						className={currentPage === number ? 'active' : ''}
 						tabIndex={0}
-						onKeyPress={() => handleClick(number)}
-						onClick={() => handleClick(number)}
+						onKeyPress={() => handleClick(number, i)}
+						onClick={() => handleClick(number, i)}
 					>
 						{number}
 					</li>

@@ -71,7 +71,7 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 				{loading ? (
 					<Loader darkMode={darkMode} />
 				) : (
-					<>
+					<div className="chart-info-wrapper">
 						<p className="info-header">Price 30d</p>
 						<div className="chart-wrapper">
 							{xPrices.length > 3 ? (
@@ -80,7 +80,7 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 								<p className="info-value">No data... 📈</p>
 							)}
 						</div>
-					</>
+					</div>
 				)}
 			</td>
 			<td></td>

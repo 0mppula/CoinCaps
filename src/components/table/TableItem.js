@@ -40,11 +40,13 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 				{formatPercent(crypto.price_change_percentage_7d_in_currency)}
 			</td>
 			<td tabIndex={0} onKeyPress={() => handleClick(crypto.id)} className="drop-info-icon">
-				<FontAwesomeIcon
-					icon={faChevronUp}
-					className={`icon ${isActive() ? 'hide-info' : 'show-info'}`}
-					onClick={() => handleClick(crypto.id)}
-				/>
+				<div className="table-padding-right">
+					<FontAwesomeIcon
+						icon={faChevronUp}
+						className={`icon ${isActive() ? 'hide-info' : 'show-info'}`}
+						onClick={() => handleClick(crypto.id)}
+					/>
+				</div>
 			</td>
 
 			<td className={`${isActive() ? 'border-bottom active' : 'border-bottom '}`}></td>
