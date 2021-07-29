@@ -41,9 +41,13 @@
 	color: var(--clr-primary);
 }
 
+.nav-links {
+	margin-right: 1rem;
+	transition: 0.2s ease;
+}
+
 .controls {
 	position: relative;
-	margin-right: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -54,7 +58,7 @@
 	margin-right: 0.15rem;
 }
 
-.controls .icon-wrapper {
+.controls .darkmode-wrapper {
 	border-radius: 4px;
 }
 
@@ -77,20 +81,42 @@
 	height: 20px;
 }
 
-.icon-wrapper:hover,
+.darkmode-wrapper:hover,
 .currency-toggler:hover {
 	background: var(--clr-hover);
 }
 
-.icon-wrapper {
+.darkmode-wrapper {
+	display: flex;
+	align-items: center;
 	padding: 0.35rem 0.5rem;
 	cursor: pointer;
+}
+
+.darkmode-wrapper span {
+	display: none;
 }
 
 .currency-text {
 	text-transform: uppercase;
 	margin: 0 0.35rem;
 }
+/* Burger styles */
+.burger {
+	display: none;
+	cursor: pointer;
+	margin-right: 1rem;
+}
+
+.burger > div {
+	height: 3px;
+	width: 28px;
+	margin: 5px;
+	background: var(--clr-text-primary);
+	transition: 0.2s ease;
+}
+
+/* End Burger styles */
 
 /* Currency list */
 .currency-list {
@@ -140,3 +166,66 @@
 	background: var(--clr-hover);
 }
 /* End Currency list */
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+	.burger {
+		display: block;
+	}
+	.nav-links {
+		position: absolute;
+		top: calc(var(--nav-heigth) - 3px);
+		right: 0;
+		width: 100%;
+		background: var(--clr-background-L1);
+		transform: translateX(115%);
+		padding: 1rem 75px;
+		margin: 0rem;
+		border-bottom: solid 2px var(--clr-primary);
+	}
+
+	.nav-links.active {
+		transform: translateX(0);
+	}
+
+	.darkmode-wrapper,
+	.currency-toggler {
+		display: flex;
+		justify-content: center;
+		flex-basis: 200px;
+	}
+
+	.currency-toggler {
+		border-radius: 4px;
+		margin: 0 !important;
+	}
+
+	.currency-list {
+		top: 53px;
+		left: 0px;
+		width: 200px;
+		background-color: var(--clr-background-L1);
+		color: var(--clr-text-primary);
+		padding: 0.15rem;
+	}
+
+	.darkmode-wrapper span {
+		margin-left: 0.5rem;
+		display: block;
+	}
+}
+/* End Media Queries */
+
+/* Keyframes and Animations */
+.burger.active .line-1 {
+	transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger.active .line-2 {
+	opacity: 0;
+}
+
+.burger.active .line-3 {
+	transform: rotate(-45deg) translate(5px, -6px);
+}
+/* End Keyframes and Animations */

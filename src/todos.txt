@@ -11,7 +11,7 @@
 - Style nav ✔
 - Name the project Coin Caps and add a place holder logo. ✔
 - Add dark mode. ✔
-- Add burger to navbar. 👷‍♂️
+- Add burger to navbar. ✔
 - Make navbar responsive. 👷‍♂️
 
 // CurrencyList:
@@ -78,5 +78,6 @@
 - Add a dynamically updating copyright date. ✔
 - Add resources to footer. ✔
 
-// Chart fix chart not taking 100% of container.
+// Chart
+- Chart fix chart not taking 100% of container. ✔
 

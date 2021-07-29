@@ -39,10 +39,9 @@
 	--clr-hover: #353535;
 	/* Primary Colors */
 	--clr-primary: #b69ed3;
+	/* Opacity */
 	--clr-primary-opacity-low: #b69ed399;
 	--clr-primary-opacity-high: #b69ed3bb;
-	/* Opacity */
-	--clr-primary-opacity-low: #b69ed366;
 	/* Success and Danger */
 	--clr-danger: #f96767;
 	--clr-success: #12cc2f;

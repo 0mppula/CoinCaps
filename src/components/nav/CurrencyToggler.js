@@ -5,7 +5,7 @@ import { currencies } from '../../utils/Currencies';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 
-const CurrencyToggler = ({ activeCurrency, setActiveCurrency }) => {
+const CurrencyToggler = ({ activeCurrency, setActiveCurrency, burgerActive }) => {
 	const [listOpen, setListOpen] = useState(false);
 
 	useEffect(() => {
@@ -19,10 +19,12 @@ const CurrencyToggler = ({ activeCurrency, setActiveCurrency }) => {
 		toggleList();
 	};
 
+	let w = window.innerWidth;
+
 	return (
 		<>
 			<div
-				tabIndex={0}
+				tabIndex={w > 768 || burgerActive ? 0 : null}
 				className="currency-toggler"
 				onKeyPress={toggleList}
 				onClick={toggleList}

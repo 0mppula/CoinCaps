@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
-const DarkToggler = ({ darkMode, setDarkMode }) => {
+const DarkToggler = ({ darkMode, setDarkMode, burgerActive }) => {
 	useEffect(() => {
 		toggleDarkMode();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -14,14 +14,17 @@ const DarkToggler = ({ darkMode, setDarkMode }) => {
 		localStorage.setItem('darkmode', darkMode);
 	};
 
+	let w = window.innerWidth;
+
 	return (
 		<div
-			tabIndex={0}
+			className="darkmode-wrapper"
+			tabIndex={w > 768 || burgerActive ? 0 : null}
 			onKeyPress={() => setDarkMode(!darkMode)}
 			onClick={() => setDarkMode(!darkMode)}
-			className="icon-wrapper"
 		>
 			<FontAwesomeIcon className="icon moon m-6" icon={darkMode ? faSun : faMoon} />
+			<span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
 		</div>
 	);
 };
