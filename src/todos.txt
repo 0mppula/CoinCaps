@@ -3,7 +3,7 @@
 - Store cryptocurrencies in state as an array with init app. ✔
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
 - Style APP so that it look decant for further development. ✔
-- Add 1000 cryptos on APP load to cryptos. 👷‍♂️
+- Add 2000 cryptos on APP load to cryptos. ✔
 - Check hover/active styles of whole APP both in light and dark mode. ✔
 - Check tab indicies of app, update if needed.
 
@@ -12,7 +12,7 @@
 - Name the project Coin Caps and add a place holder logo. ✔
 - Add dark mode. ✔
 - Add burger to navbar. ✔
-- Make navbar responsive. 👷‍♂️
+- Make navbar responsive. ✔
 
 // CurrencyList:
 - Update selector icon when currency is selected. ✔
@@ -40,7 +40,7 @@
 - Add hover/selected highlight to crypto items. ✔
 - Keep padding on the right of crypto table on smaller screens. ✔
 - Remove padding from right of cryptotable on small screens (adjust rank/img th to achieve this :)). or add divs. ✔
-- Adjust container size for mobile screens. 👷‍♂️
+- Adjust container size for mobile screens. ✔
 - Style X scroll wheel to match the APP theme.
 
 // CryptoItem:
