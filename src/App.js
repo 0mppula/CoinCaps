@@ -55,6 +55,7 @@ function App() {
 	}, [currentPage, cryptopsPerPage]);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		setFileredCryptos('');
 	}, [darkMode, activeCurrency]);
 
