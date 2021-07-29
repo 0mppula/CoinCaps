@@ -42,6 +42,7 @@
 - Remove padding from right of cryptotable on small screens (adjust rank/img th to achieve this :)). or add divs. ✔
 - Adjust container size for mobile screens. ✔
 - Fix dropdown changing footer size. ✔
+- Fix footer links, remove p tag, align text right and add paggind of 50+px. 👷‍♂️
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
