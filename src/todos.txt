@@ -3,7 +3,7 @@
 - Store cryptocurrencies in state as an array with init app. ✔
 - Create search input that filteres cryptos and creates a new state called filtered cryptos ✔
 - Style APP so that it look decant for further development. ✔
-- Add 2000 cryptos on APP load to cryptos. ✔
+- Add 1000 cryptos on APP load to cryptos. ✔
 - Check hover/active styles of whole APP both in light and dark mode. ✔
 - Check tab indicies of app, update if needed.
 
