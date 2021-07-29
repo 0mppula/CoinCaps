@@ -29,3 +29,12 @@
 	background: var(--clr-background-L3);
 	transform: scale(1.03);
 }
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+	.to-top-button {
+		bottom: 1.5rem;
+		right: 1.5rem;
+	}
+}
+/* End Media Queries */

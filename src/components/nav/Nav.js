@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CurrencyToggler from './CurrencyToggler';
 import DarkToggler from './DarkToggler';
 import Burger from './Burger';
@@ -12,6 +12,10 @@ const Nav = ({ activeCurrency, setActiveCurrency, darkMode, setDarkMode, setQuer
 	const handleBurgerClick = () => {
 		setBurgerActive(!burgerActive);
 	};
+
+	useEffect(() => {
+		setBurgerActive(false);
+	}, [darkMode, activeCurrency]);
 
 	return (
 		<nav className="navbar">

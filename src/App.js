@@ -9,7 +9,6 @@ import Pagination from './components/pagination/Pagination';
 import ToTop from './components/tools/ToTop';
 
 import { currencies } from './utils/Currencies';
-import DarkToggler from './components/nav/DarkToggler';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
@@ -68,6 +67,7 @@ function App() {
 				setDarkMode={setDarkMode}
 				setQuery={setQuery}
 			/>
+
 			<div className="container">
 				<SearchContainer
 					cryptos={cryptos}

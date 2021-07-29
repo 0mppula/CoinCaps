@@ -1,8 +1,6 @@
 /* Master styles */
 .footer {
-	width: 100%;
-	min-height: 14rem;
-	margin-top: 7rem;
+	margin-top: 12.5rem;
 	padding: 2.75rem 0 1.5rem;
 	background: var(--clr-background-L1);
 	color: var(--clr-text-primary);
