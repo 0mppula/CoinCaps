@@ -83,5 +83,9 @@
 // Chart
 - Chart fix chart not taking 100% of container. ✔
 
+// Miscellaneous
+- Remove old files. 👷‍♂️
+
 // Documentation
 - Read the docs for this project from JAMK's course description. 👷‍♂️
+- Create Documentation. 👷‍♂️
