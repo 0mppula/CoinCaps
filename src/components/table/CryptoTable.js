@@ -18,6 +18,8 @@ const CryptoTable = ({ filteredCryptos, activeCurrency, currentCryptos, darkMode
 		return currentCryptos;
 	};
 
+	console.log(currentCryptos);
+
 	return (
 		<div className="crypto-table">
 			<table>
