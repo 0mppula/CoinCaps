@@ -6,7 +6,7 @@ const LoaderLarge = ({ darkMode }) => {
 	return (
 		<div className="chart-loader-wrapper-large">
 			<img src={darkMode === true ? logo_dark : logo_light} alt="Loading..." />
-			<p className="loading">Loading...</p>
+			<p className="loading">Loading Cryptos...</p>
 		</div>
 	);
 };

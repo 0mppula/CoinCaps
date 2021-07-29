@@ -25,7 +25,7 @@ const CryptoItem = ({ crypto, active, setActive, activeCurrency }) => {
 
 	return (
 		<tr className={isActive() ? 'table-item active' : 'table-item'}>
-			<td>{crypto.market_cap_rank}</td>
+			<td>{crypto.market_cap_rank || 'No data...'}</td>
 			<td>
 				<img src={crypto.image} alt={`${crypto.name} icon`} />
 			</td>

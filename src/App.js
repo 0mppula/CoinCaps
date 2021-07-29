@@ -28,11 +28,15 @@ function App() {
 	useEffect(() => {
 		const getCryptoData = async () => {
 			setLoading(true);
-			const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${activeCurrency.code}&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=24h%2C7d`;
-			const response = await fetch(url);
-			const data = await response.json();
-			const slicedData = data.slice(indexOfFirstCrypto, indexOfLastCrypto);
-			setCryptos(data);
+			const temp = [];
+			for (let i = 1; i < 9; i++) {
+				let url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${activeCurrency.code}&order=market_cap_desc&per_page=250&page=${i}&sparkline=false&price_change_percentage=24h%2C7d`;
+				const response = await fetch(url);
+				const data = await response.json();
+				temp.push(...data);
+			}
+			const slicedData = temp.slice(indexOfFirstCrypto, indexOfLastCrypto);
+			setCryptos(temp);
 			setCurrentCryptos(slicedData);
 			setLoading(false);
 		};

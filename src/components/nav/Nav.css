@@ -13,7 +13,6 @@
 }
 
 .nav-info {
-	width: min(40%, 200px);
 	margin-left: 1rem;
 }
 
@@ -179,7 +178,7 @@
 		width: 100%;
 		background: var(--clr-background-L1);
 		transform: translateX(115%);
-		padding: 1rem 75px;
+		padding: 1rem;
 		margin: 0rem;
 		border-bottom: solid 2px var(--clr-primary);
 	}
@@ -214,6 +213,13 @@
 		display: block;
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	.nav-links {
+		padding: 1rem 0px;
+	}
+}
+
 /* End Media Queries */
 
 /* Keyframes and Animations */
