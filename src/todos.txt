@@ -40,6 +40,8 @@
 - Add hover/selected highlight to crypto items. ✔
 - Keep padding on the right of crypto table on smaller screens. ✔
 - Remove padding from right of cryptotable on small screens (adjust rank/img th to achieve this :)). or add divs. ✔
+- Adjust container size for mobile screens. 👷‍♂️
+- Style X scroll wheel to match the APP theme.
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
@@ -81,3 +83,5 @@
 // Chart
 - Chart fix chart not taking 100% of container. ✔
 
+// Documentation
+- Read the docs for this project from JAMK's course description. 👷‍♂️
