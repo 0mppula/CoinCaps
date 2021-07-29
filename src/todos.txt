@@ -51,6 +51,7 @@
 - Populate crypto item (dropdown) with data [volume, ath, ath, date, 30d prices, 30d price action chart]. ✔
 - Switch to column setup add header to chart. ✔
 - Add colors to chart and fill. ✔
+- Highlight crypto info items, add gap. 👷‍♂️ 
 
 // Loader
 - Create small spinning loader for chart load. ✔
