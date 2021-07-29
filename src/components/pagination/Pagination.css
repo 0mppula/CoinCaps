@@ -157,7 +157,7 @@
 		padding: 0;
 	}
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
 	.page-selector {
 		min-width: 250px;
 	}
