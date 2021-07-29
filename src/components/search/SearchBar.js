@@ -19,14 +19,14 @@ const SearchBar = ({ cryptos, setFileredCryptos, currentCryptos }) => {
 
 	const handleEsc = (e) => {
 		if (e.key === 'Escape' || e.key === 'e scape') {
-			setQuery(null);
+			setQuery('');
 			setFileredCryptos(null);
 			inputRef.current.focus();
 		}
 	};
 
 	const handleClick = () => {
-		setQuery(null);
+		setQuery('');
 		setFileredCryptos(null);
 		inputRef.current.focus();
 	};
