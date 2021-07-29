@@ -41,7 +41,7 @@
 - Keep padding on the right of crypto table on smaller screens. ✔
 - Remove padding from right of cryptotable on small screens (adjust rank/img th to achieve this :)). or add divs. ✔
 - Adjust container size for mobile screens. ✔
-- Style X scroll wheel to match the APP theme.
+- Fix dropdown changing footer size. ✔
 
 // CryptoItem:
 - Asses the data from coin gecko api. ✔
