@@ -6,7 +6,7 @@ import Burger from './Burger';
 import logo_light from '../../images/branding/logo_light.png';
 import logo_dark from '../../images/branding/logo_dark.png';
 
-const Nav = ({ activeCurrency, setActiveCurrency, darkMode, setDarkMode }) => {
+const Nav = ({ activeCurrency, setActiveCurrency, darkMode, setDarkMode, setQuery }) => {
 	const [burgerActive, setBurgerActive] = useState(false);
 
 	const handleBurgerClick = () => {
@@ -29,11 +29,13 @@ const Nav = ({ activeCurrency, setActiveCurrency, darkMode, setDarkMode }) => {
 						activeCurrency={activeCurrency}
 						setActiveCurrency={setActiveCurrency}
 						burgerActive={burgerActive}
+						setQuery={setQuery}
 					/>
 					<DarkToggler
 						darkMode={darkMode}
 						setDarkMode={setDarkMode}
 						burgerActive={burgerActive}
+						setQuery={setQuery}
 					/>
 				</div>
 			</div>

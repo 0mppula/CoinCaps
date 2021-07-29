@@ -5,7 +5,7 @@ import { currencies } from '../../utils/Currencies';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 
-const CurrencyToggler = ({ activeCurrency, setActiveCurrency, burgerActive }) => {
+const CurrencyToggler = ({ activeCurrency, setActiveCurrency, burgerActive, setQuery }) => {
 	const [listOpen, setListOpen] = useState(false);
 
 	useEffect(() => {
@@ -17,6 +17,7 @@ const CurrencyToggler = ({ activeCurrency, setActiveCurrency, burgerActive }) =>
 	const handleSelect = (currency) => {
 		setActiveCurrency(currency);
 		toggleList();
+		setQuery('');
 	};
 
 	let w = window.innerWidth;

@@ -69,6 +69,11 @@
 	transition: none;
 }
 
+.search.loading,
+.times.loading {
+	pointer-events: none;
+}
+
 .times {
 	right: 12px;
 	top: 7px;

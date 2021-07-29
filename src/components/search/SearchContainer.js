@@ -8,6 +8,9 @@ export const SearchContainer = ({
 	activeCurrency,
 	currentCryptos,
 	darkMode,
+	loading,
+	query,
+	setQuery,
 }) => {
 	return (
 		<div className="search-container">
@@ -16,6 +19,9 @@ export const SearchContainer = ({
 				cryptos={cryptos}
 				setFileredCryptos={setFileredCryptos}
 				currentCryptos={currentCryptos}
+				loading={loading}
+				query={query}
+				setQuery={setQuery}
 			/>
 		</div>
 	);

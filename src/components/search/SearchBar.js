@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = ({ cryptos, setFileredCryptos, currentCryptos }) => {
-	const [query, setQuery] = useState('');
+const SearchBar = ({ cryptos, setFileredCryptos, loading, query, setQuery }) => {
 	const inputRef = useRef();
 
 	const handleInputChange = (e) => {
@@ -41,12 +40,17 @@ const SearchBar = ({ cryptos, setFileredCryptos, currentCryptos }) => {
 				onKeyDown={handleEsc}
 				value={query}
 				placeholder="Search for a crypto..."
+				disabled={loading}
 			/>
 			{query ? (
-				<FontAwesomeIcon className="icon times" icon={faTimes} onClick={handleClick} />
+				<FontAwesomeIcon
+					className={loading ? 'icon times loading' : 'icon times'}
+					icon={faTimes}
+					onClick={handleClick}
+				/>
 			) : (
 				<FontAwesomeIcon
-					className="icon search"
+					className={loading ? 'icon search loading' : 'icon search'}
 					icon={faSearch}
 					onClick={() => inputRef.current.focus()}
 				/>

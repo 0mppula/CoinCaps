@@ -9,6 +9,7 @@ import Pagination from './components/pagination/Pagination';
 import ToTop from './components/tools/ToTop';
 
 import { currencies } from './utils/Currencies';
+import DarkToggler from './components/nav/DarkToggler';
 
 function App() {
 	const [cryptos, setCryptos] = useState([]);
@@ -19,6 +20,8 @@ function App() {
 	);
 	const [loading, setLoading] = useState(true);
 	const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkmode')) || false);
+	// Query
+	const [query, setQuery] = useState('');
 	// Pagination
 	const [currentPage, setCurrentPage] = useState(1);
 	const [cryptopsPerPage, setCryptosPerPage] = useState(25);
@@ -51,6 +54,10 @@ function App() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPage, cryptopsPerPage]);
 
+	useEffect(() => {
+		setFileredCryptos('');
+	}, [darkMode, activeCurrency]);
+
 	return (
 		<>
 			<Nav
@@ -58,6 +65,7 @@ function App() {
 				setActiveCurrency={setActiveCurrency}
 				darkMode={darkMode}
 				setDarkMode={setDarkMode}
+				setQuery={setQuery}
 			/>
 			<div className="container">
 				<SearchContainer
@@ -66,6 +74,9 @@ function App() {
 					activeCurrency={activeCurrency}
 					currentCryptos={currentCryptos}
 					darkMode={darkMode}
+					loading={loading}
+					query={query}
+					setQuery={setQuery}
 				/>
 				{loading && <LoaderLarge darkMode={darkMode} />}
 				{!loading && (
