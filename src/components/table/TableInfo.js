@@ -67,7 +67,7 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 				<p className="info-value">{formatDate(crypto.ath_date)}</p>
 			</td>
 
-			<td colSpan={2}>
+			<td colSpan={2} className="chart-colspan">
 				{loading ? (
 					<Loader darkMode={darkMode} />
 				) : (
