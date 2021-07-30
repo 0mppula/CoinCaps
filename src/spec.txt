@@ -1,8 +1,7 @@
 APP Features:
-- Show prices of the 500-2000 most valuable cryptocurrencies, (paginated 25 50 or 100).
+- Show prices of the 500-2000 most valuable cryptocurrencies, (paginated 25 50 or 100). ✔
 - Ability to filter through the list of cryptos with a search field. ✔
 - Loading screen on init app. ✔
-- Responsive navbar.
-- Responsive footer.
+- Responsive navbar. ✔
+- Responsive footer. ✔
 - Add dark mode. ✔
-- Add a clock to the app.
