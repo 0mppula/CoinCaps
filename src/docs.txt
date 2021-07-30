@@ -1,0 +1,40 @@
+// Requirements
+1. Use a MV for project (using React).
+2. Expand the learned consepts with end project.
+3. APP creation, design and implementation must be documented with a HTML file.
+4. Time used for project is ~40h.
+5. The project is presented in video form in a web seminar.
+
+// Palautus
+1. Työn valmistumisesta ilmoitetaan sähköpostilla kertomalla ainoastaan URL, josta työ löytyy. Työn tulee olla tuolloin valmis ja opettajan tarkastettavissa. Mitään ZIP-paketteja ei postiteta.
+2. Dokumentaation tulee sisältää selkeästi saatavilla oleva linkki  videoesitykseen, jos esittely suoritetaan videona.
+3. Palautuksen muotoseikoista. Yhden URLin takaa löytyy:
+
+    - Työn loppudokumentaatio: Harjoitustyön nimi, tekijöiden nimet, päivämäärä ja tieto siitä, minkä kurssin harjoitustyö on kyseessä.
+    - Tehtävän kuvaus
+    - Käytännön toteutuksen selostus, esimerkiksi:
+    
+        - Sovelluksen kokonaisrakenne mielellään graafisesti, mahdollinen luokkarakenne, funktioiden suhteet, sovelluksen suhteet tiedostoihin, mahdollisiin ulkoisiin tietovarastoihin...
+        - Funktiot ja luokat (JavaScript: oliot) : suositeltavaa ainakin tärkeimpien toiminta dokumentoitava, välitettävät parametrit
+        - Ulkoiset tietovarastot
+
+    - Lähdekoodit - Kaikki sovelluksen lähdekoodit on oltava tarjolla
+    - Ajan käyttö - Selvitys työhön käytetystä ajasta ja tekijöiden roolista harjoitustyön tekemisessä sekä työn jakaantumisesta ryhmän sisällä.
+    - Itsearvio – oma arvio työstä muutamalla virkkeellä. Arvosanaehdotus/tekijä. Onnistumiset, puutteet, huomioita. Opintojakson arvioiva opettaja ottaa lopullisessa arvioinnissa myös huomioon sen kuinka realistinen oma arvosanaehdotus on.
+
+4. Linkki kaiken edellisen sisältävään zip-pakettiin.
+
+// Video & Docs
+1. Ytimekkäästi: dokumentaatiosta tulee käydä ilmi: kuka on tehnyt?, mitä on tehnyt?, kuinka on tehnyt?, koska on tehnyt? ja kuinka paljon on tehnyt?
+2. Harjoitustyönne ansiot ja kehittämisen kohteet tulisi olla selkeästi ilmaistuna jo työn palautushetkellä harjoitustyön dokumentaatiossa.
+3. Vapaaehtoisessa (video)esittelyssä
+
+    - ei tarvitse näyttää omaa naamaa-
+    - demotaan toteutuksen keskeisimmät/oleellisimmat/tärkeimmät toiminnot.
+    - luetellaan työn kannalta oleelliset tekniset ratkaisut ja korostetaan merkittävimpiä teknisiä ansioita ja todetaan kehittämisen kohteet.
+    - edellisissä voi hyödyntää luotua HTML-muotoista dokumentaatiota, esitysslaidit eivät ole mitenkään pakollisia jos eivät kiellettyjäkään.
+    - kerrotaan ytimekkäästi oma arvio myös HTML-muotoisen dokumentaation laajuudesta ja laadusta.
+    - yritetään pysyä annetussa aikaikkunassa 3-10min, mutta esitys voi olla jonkin verran pitempi, jos työn laajuus ja esitystekniset asiat niin vaativat.
+
+5. Videoesittely voi olla tarjolla esim Youtubessa tai vastaavassa ja sen näkyvyys voi olla unlisted. Myös mikä muu tahansa palvelu videoiden näyttämiseen on ok, kunhan video on opettajan katseltavissa.
+6. Linkki videoesittelyyn kannattaa tarjota HTML-muotoisen dokumentaation alussa tai ainakin ensimmäisessä näkymässä
