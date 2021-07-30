@@ -30,7 +30,7 @@ const Footer = ({ darkMode }) => {
 						<div className="link-header">
 							<h2>Technologies</h2>
 						</div>
-						<div>
+						<ul>
 							<Link
 								url={'https://developer.mozilla.org/en-US/docs/Web/JavaScript'}
 								text={'JavaScript'}
@@ -45,25 +45,25 @@ const Footer = ({ darkMode }) => {
 								url={'https://developer.mozilla.org/en-US/docs/Web/HTML'}
 								text={'HTML'}
 							/>
-						</div>
+						</ul>
 					</div>
 					<div className="footer-link-section">
 						<div className="link-header">
 							<h2>Resources</h2>
 						</div>
-						<div>
+						<ul>
 							<Link url={'https://www.coingecko.com/'} text={'CoinGecko API'} />
 							<Link url={'https://www.chartjs.org/'} text={'Chart.js'} />
 							<Link url={'https://fontawesome.com/'} text={'Font Awesome'} />
 							<Link url={'https://www.flaticon.com/'} text={'Flaticon'} />
 							<Link url={'https://icons8.com/'} text={'Icons8'} />
-						</div>
+						</ul>
 					</div>
 					<div className="footer-link-section">
 						<div className="link-header">
 							<h2>Developer</h2>
 						</div>
-						<div>
+						<ul>
 							<Link
 								url={'https://github.com/0mppula/Coin_Caps'}
 								text={'GitHub Repository'}
@@ -84,19 +84,19 @@ const Footer = ({ darkMode }) => {
 								url={'https://www.coingecko.com/api_terms'}
 								text={'CoinGecko API Terms of Service'}
 							/>
-						</div>
+						</ul>
 					</div>
 					<div className="footer-link-section">
 						<div className="link-header">
 							<h2>Other</h2>
 						</div>
-						<div>
+						<ul>
 							<Link
 								url={'https://www.jamk.fi/'}
 								text={'Jyväskylä University of Applied Sciences'}
 							/>
 							<Link url={'.'} text={'Documentation'} />
-						</div>
+						</ul>
 					</div>
 				</div>
 			</div>

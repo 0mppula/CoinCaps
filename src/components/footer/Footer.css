@@ -81,6 +81,10 @@
 	flex: 1 1 160px;
 }
 
+.link-item {
+	list-style-type: none;
+}
+
 .link-header {
 	height: 53px;
 	display: flex;
@@ -88,7 +92,7 @@
 	margin-bottom: 1rem;
 }
 
-.footer-top p {
+.footer-top li {
 	font-size: 0.9rem;
 	margin-bottom: 0.25rem;
 }
@@ -134,19 +138,22 @@
 	}
 	.footer-brand-section {
 		justify-content: center;
-		align-items: center;
+		align-items: left;
 	}
 	.footer-link-section {
-		text-align: center;
+		text-align: left;
 		flex: 1 1 calc(50% - 1rem);
 	}
 	.link-header {
-		justify-content: center;
+		justify-content: left;
 	}
 }
 @media only screen and (max-width: 480px) {
+	.footer-top {
+		width: min(85vw, 1200px);
+	}
+
 	.footer-link-section {
-		text-align: center;
 		flex: 1 1 100%;
 	}
 }
