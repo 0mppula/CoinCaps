@@ -253,7 +253,7 @@ th.info {
 
 @media only screen and (max-width: 930px) {
 	.chart-info-wrapper {
-		padding: 0.5rem;
+		padding: 0 0.5rem;
 	}
 }
 @media only screen and (max-width: 840px) {

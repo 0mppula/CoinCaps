@@ -111,8 +111,8 @@
 	border-radius: 2px;
 	pointer-events: none;
 	transition: 0.2s ease;
-	right: 13px;
-	top: 44px;
+	right: 10px;
+	top: 38px;
 }
 
 .row-list.active {
@@ -156,8 +156,13 @@
 		flex: 1 1 35%;
 		padding: 0;
 	}
+
+	.row-list {
+		right: 0;
+		top: 38px;
+	}
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 440px) {
 	.page-selector {
 		min-width: 250px;
 	}
@@ -173,6 +178,8 @@
 		margin-top: 0.5rem;
 	}
 	.row-selector {
+		flex-basis: 100%;
+		justify-content: space-between;
 		margin-top: 0.25rem;
 	}
 }
