@@ -27,7 +27,6 @@
 .to-top-button:hover {
 	color: var(--clr-primary);
 	background: var(--clr-background-L3);
-	transform: scale(1.03);
 }
 
 /* Media Queries */
