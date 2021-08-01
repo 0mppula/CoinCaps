@@ -63,7 +63,6 @@ const TableInfo = ({ crypto, active, activeCurrency, darkMode }) => {
 
 			<td colSpan={1}>
 				<p className="info-header">ATH Date</p>
-				{/* <p className="info-value">{dateFormat(new Date(crypto.ath_date), 'dd/mm/yyyy')}</p> */}
 				<p className="info-value">{formatDate(crypto.ath_date)}</p>
 			</td>
 
