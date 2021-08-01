@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Link = ({ url, text }) => {
 	return (
 		<li className="link-item">
