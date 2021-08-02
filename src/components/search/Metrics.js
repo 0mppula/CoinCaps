@@ -22,6 +22,7 @@ const Metrics = ({ activeCurrency, darkMode }) => {
 
 		getData();
 	}, [activeCurrency]);
+
 	return (
 		<div className="metrics">
 			{loading && (
