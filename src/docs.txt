@@ -14,7 +14,7 @@
     - Tehtävän kuvaus ✔
     - Käytännön toteutuksen selostus, esimerkiksi:
     
-        - Sovelluksen kokonaisrakenne mielellään graafisesti ✔, mahdollinen luokkarakenne, funktioiden suhteet👷‍♂️, sovelluksen suhteet tiedostoihin 👷‍♂️, mahdollisiin ulkoisiin tietovarastoihin 👷‍♂️...
+        - Sovelluksen kokonaisrakenne mielellään graafisesti ✔, mahdollinen luokkarakenne, funktioiden suhteet✔, sovelluksen suhteet tiedostoihin ✔, mahdollisiin ulkoisiin tietovarastoihin ✔...
         - Funktiot ja luokat (JavaScript: oliot) : suositeltavaa ainakin tärkeimpien toiminta dokumentoitava, välitettävät parametrit
         - Ulkoiset tietovarastot
 
