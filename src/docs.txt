@@ -1,9 +1,9 @@
 // Requirements
 1. Use a MV for project (using React). ✔
 2. Expand the learned consepts with end project. ✔
-3. APP creation, design and implementation must be documented with a HTML file. 👷‍♂️
+3. APP creation, design and implementation must be documented with a HTML file. ✔
 4. Time used for project is ~40h. ✔
-5. The project is presented in video form in a web seminar. 👷‍♂️
+5. The project is presented in video form in a web seminar. ✔
 
 // Palautus
 1. Työn valmistumisesta ilmoitetaan sähköpostilla kertomalla ainoastaan URL, josta työ löytyy. Työn tulee olla tuolloin valmis ja opettajan tarkastettavissa. Mitään ZIP-paketteja ei postiteta. 👷‍♂️
@@ -16,11 +16,11 @@
     
         - Sovelluksen kokonaisrakenne mielellään graafisesti ✔, mahdollinen luokkarakenne, funktioiden suhteet✔, sovelluksen suhteet tiedostoihin ✔, mahdollisiin ulkoisiin tietovarastoihin ✔...
         - Funktiot ja luokat (JavaScript: oliot) : suositeltavaa ainakin tärkeimpien toiminta dokumentoitava, välitettävät parametrit
-        - Ulkoiset tietovarastot
+        - Ulkoiset tietovarastot ✔
 
-    - Lähdekoodit - Kaikki sovelluksen lähdekoodit on oltava tarjolla
-    - Ajan käyttö - Selvitys työhön käytetystä ajasta ja tekijöiden roolista harjoitustyön tekemisessä sekä työn jakaantumisesta ryhmän sisällä.
-    - Itsearvio – oma arvio työstä muutamalla virkkeellä. Arvosanaehdotus/tekijä. Onnistumiset, puutteet, huomioita. Opintojakson arvioiva opettaja ottaa lopullisessa arvioinnissa myös huomioon sen kuinka realistinen oma arvosanaehdotus on.
+    - Lähdekoodit - Kaikki sovelluksen lähdekoodit on oltava tarjolla ✔
+    - Ajan käyttö - Selvitys työhön käytetystä ajasta ja tekijöiden roolista harjoitustyön tekemisessä sekä työn jakaantumisesta ryhmän sisällä. ✔
+    - Itsearvio – oma arvio työstä muutamalla virkkeellä. Arvosanaehdotus/tekijä. Onnistumiset, puutteet, huomioita. Opintojakson arvioiva opettaja ottaa lopullisessa arvioinnissa myös huomioon sen kuinka realistinen oma arvosanaehdotus on. ✔
 
 4. Linkki kaiken edellisen sisältävään zip-pakettiin.
 
