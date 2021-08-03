@@ -1,6 +1,6 @@
 # Coin Caps Web-Application
 
-#### What is Coin Caps?
+### What is Coin Caps?
 
 [Coin Caps][1] is a web-application where the user can view data of the 1000 most valuable cryptocurrencies by market capitalization. In addition, the user can select in which currency the app shows the price data for the cryptos.
 
