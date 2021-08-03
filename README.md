@@ -1,7 +1,3 @@
-<a href=".">
-    <img src="https://github.com/0mppula/Coin_Caps/blob/master/src/images/branding/logo_dark.png?raw=true" alt="Coin Caps logo" title="Coin Caps" align="right" height="40" />
-</a>
-
 # Coin Caps Web-Application
 
 ### What is Coin Caps?
