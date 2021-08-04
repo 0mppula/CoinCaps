@@ -95,7 +95,12 @@ const Footer = ({ darkMode }) => {
 								url={'https://www.jamk.fi/'}
 								text={'Jyväskylä University of Applied Sciences'}
 							/>
-							<Link url={'.'} text={'Documentation'} />
+							<Link
+								url={
+									'https://student.labranet.jamk.fi/~AB4493/web-ohjelmointi/harjoitustyo/dokumentaatio/'
+								}
+								text={'Documentation (finnish)'}
+							/>
 						</ul>
 					</div>
 				</div>
