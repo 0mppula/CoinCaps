@@ -20,5 +20,5 @@ The application has good accessibility. All of the interactive elements have the
 
 The app also has a lot of modern conveniences like a scroll-to-top element, a responsive structure, different loader elements and click-outside-to-close functionality.
 
-[1]: https://www.jamk.fi/
+[1]: https://coincaps.netlify.app/
 [2]: https://www.coingecko.com/en/api

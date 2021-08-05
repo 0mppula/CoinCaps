@@ -96,9 +96,7 @@ const Footer = ({ darkMode }) => {
 								text={'Jyväskylä University of Applied Sciences'}
 							/>
 							<Link
-								url={
-									'https://student.labranet.jamk.fi/~AB4493/web-ohjelmointi/harjoitustyo/dokumentaatio/'
-								}
+								url={'https://coincapsdocs.netlify.app/'}
 								text={'Documentation (finnish)'}
 							/>
 						</ul>
