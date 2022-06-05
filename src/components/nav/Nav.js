@@ -23,7 +23,7 @@ const Nav = ({ activeCurrency, setActiveCurrency, darkMode, setDarkMode, setQuer
 				<a href=".">
 					<img src={darkMode === true ? logo_dark : logo_light} alt="logo.jpg" />
 					<h1>
-						<span>C</span>oin<span>C</span>aps TEST
+						<span>C</span>oin<span>C</span>aps
 					</h1>
 				</a>
 			</div>
