@@ -1,8 +1,8 @@
-# Coin Caps Web-Application
+# CoinCaps Web-Application
 
-### What is Coin Caps?
+### What is CoinCaps?
 
-[Coin Caps][1] is a web-application where the user can view data of the 1000 most valuable cryptocurrencies by market capitalization. In addition, the user can select in which currency the app shows the price data for the cryptos.
+[CoinCaps][1] is a web-application where the user can view data of the 1000 most valuable cryptocurrencies by market capitalization. In addition, the user can select in which currency the app shows the price data for the cryptos.
 
 All of the applications data and statistics are retrieved from the [CoinGecko][2] API with different `AJAX` calls. The app contains a total of 3 individually different `AJAX` calls.
 
