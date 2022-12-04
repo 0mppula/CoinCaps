@@ -65,25 +65,18 @@ const Footer = ({ darkMode }) => {
 						</div>
 						<ul>
 							<Link
-								url="https://github.com/0mppula/Coin_Caps"
-								text="GitHub Repository"
-							/>
-							<Link
 								url="https://www.omarkraidie.com/"
 								text="Omar Kraidié Portfolio"
 							/>
 							<Link
 								url="https://www.goodreads.com/review/list/135003326-0mppu?ref=nav_mybooks&shelf=programming"
-								text="Programming Books"
+								text="Technology Books"
 							/>
 							<Link
-								url="https://csgo-weapons.netlify.app/"
-								text="Project: CS:GO Weapons"
+								url="https://github.com/0mppula/Coin_Caps"
+								text="GitHub Repository"
 							/>
-							<Link
-								url="https://polishcow.netlify.app/"
-								text="Project: Dancing Polish Cow"
-							/>
+							<Link url="https://koronkorko.com/" text="Project: KoronKorko" />
 							<Link
 								url="https://www.coingecko.com/api_terms"
 								text="CoinGecko API Terms of Service"
@@ -110,10 +103,7 @@ const Footer = ({ darkMode }) => {
 			<div className="footer-bottom">
 				<div className="footer-icons">
 					<Icon url="https://github.com/0mppula" icon={faGithub} />
-					<Icon
-						url="https://www.linkedin.com/in/omarkraidie/"
-						icon={faLinkedin}
-					/>
+					<Icon url="https://www.linkedin.com/in/omarkraidie/" icon={faLinkedin} />
 					<Icon url="https://twitter.com/OmarKraidie" icon={faTwitter} />
 					<Icon
 						url="https://www.youtube.com/channel/UCdpM1SUen7ZxX2owolyIGyQ"
