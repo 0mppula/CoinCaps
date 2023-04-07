@@ -1,19 +1,25 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ cryptos, setFileredCryptos, loading, query, setQuery }) => {
+	useEffect(() => {
+		let bounce = setTimeout(() => {
+			let filtered = [...cryptos].filter((crytpo) => {
+				return crytpo.name.toLowerCase().includes(query.toLowerCase());
+			});
+
+			query ? setFileredCryptos(filtered) : setFileredCryptos(null);
+		}, 250);
+
+		return () => clearTimeout(bounce);
+	}, [query]);
+
 	const inputRef = useRef();
 
 	const handleInputChange = (e) => {
 		let inputVal = e.target.value;
 		setQuery(inputVal);
-
-		let filtered = [...cryptos].filter((crytpo) => {
-			return crytpo.name.toLowerCase().includes(inputVal.toLowerCase());
-		});
-
-		inputVal ? setFileredCryptos(filtered) : setFileredCryptos(null);
 	};
 
 	const handleEsc = (e) => {
