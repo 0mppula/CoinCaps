@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Link from './Link';
 import Icon from './Icon';
+import Link from './Link';
 
-import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faEnvelope, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import logo_dark from '../../images/branding/logo_dark.png';
 import logo_light from '../../images/branding/logo_light.png';
@@ -104,13 +104,21 @@ const Footer = ({ darkMode }) => {
 				<div className="footer-icons">
 					<Icon url="https://github.com/0mppula" icon={faGithub} />
 					<Icon url="https://www.linkedin.com/in/omarkraidie/" icon={faLinkedin} />
-					<Icon url="https://twitter.com/OmarKraidie" icon={faTwitter} />
-					<Icon
-						url="https://www.youtube.com/channel/UCdpM1SUen7ZxX2owolyIGyQ"
-						icon={faYoutube}
-					/>
+					<Icon url="mailto:devomarkraidie@gmail.com" icon={faEnvelope} />
+					<Icon url="https://github.com/0mppula/CoinCaps" icon={faCode} />
 				</div>
-				<p>Developed by Omar Kraidié.</p>
+
+				<p>
+					Developed by{' '}
+					<a
+						href="https://www.omarkraidie.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Omar Kraidié
+					</a>
+				</p>
+
 				<p>
 					Copyright <span className="copyright">{year}&copy;</span> Lahti, Finland. All
 					Rights Reserved.
