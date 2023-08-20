@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Icon from './Icon';
 import Link from './Link';
 
-import { faEnvelope, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import logo_dark from '../../images/branding/logo_dark.png';
 import logo_light from '../../images/branding/logo_light.png';
