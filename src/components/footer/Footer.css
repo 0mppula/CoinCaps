@@ -132,7 +132,14 @@
 }
 
 .footer-icons a {
+	width: 35px;
+	height: 35px;
 	display: flex;
+}
+
+.footer-icons a svg {
+	width: 100%;
+	height: 100%;
 }
 /* End Footer bottom styles */
 
